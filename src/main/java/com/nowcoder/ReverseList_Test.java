@@ -7,7 +7,7 @@ package com.nowcoder;
  * @Date 2018/5/29 13:40
  * @Version V1.0
  */
-public class ReverseList {
+public class ReverseList_Test {
     //定义链表结构
     public static class ListNode {
         /**

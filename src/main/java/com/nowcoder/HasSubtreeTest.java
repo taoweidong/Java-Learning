@@ -7,7 +7,7 @@ package com.nowcoder;
  * @Date 2018/5/31 23:02
  * @Version V1.0
  */
-public class HasSubtree {
+public class HasSubtreeTest {
 
     /**
      * 二叉树树结构

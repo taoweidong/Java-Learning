@@ -7,7 +7,7 @@ package com.nowcoder;
  * @Date 2018/5/30 21:22
  * @Version V1.0
  */
-public class Merge {
+public class Merge_Test {
 
     //定义链表结构
     public static class ListNode {
