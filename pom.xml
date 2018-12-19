@@ -10,11 +10,11 @@
 
 
 	<dependencies>
-		<!--单元测试 -->
+		<!--单元测试依赖 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- JSON数据处理 -->
