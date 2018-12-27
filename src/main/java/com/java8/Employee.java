@@ -14,6 +14,10 @@ public class Employee {
 		return JSON.toJSONString(this);
 	}
 
+	public Employee() {
+		super();
+	}
+
 	public Employee(Integer id, String name, Integer age, Double salary) {
 		super();
 		this.id = id;
