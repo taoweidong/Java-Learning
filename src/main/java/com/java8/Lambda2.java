@@ -9,11 +9,13 @@ import java.util.TreeSet;
  *       左侧：参数列表<br/>
  *       右侧：方法的具体实现,所执行的具体功能<br/>
  */
+@SuppressWarnings("unused")
 public class Lambda2 {
 
 	public static void main(String[] args) {
 
 		// 匿名内部类
+
 		Runnable r1 = new Runnable() {
 
 			@Override
