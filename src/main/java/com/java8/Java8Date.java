@@ -44,6 +44,8 @@ public class Java8Date {
 		Period period = Period.between(endDate, startDate);
 		System.out.println(period.getMonths());
 
+		LocalDateTime.now().with(TemporalAdjusters.firstDayOfMonth());
+
 		System.out.println("---------------");
 		// 时间矫正器
 		System.out

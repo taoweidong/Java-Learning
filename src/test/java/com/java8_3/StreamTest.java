@@ -15,10 +15,12 @@ import com.java8.Employee;
  * @version 2018年12月27日
  * @see StreamTest
  */
+@SuppressWarnings("unused")
 public class StreamTest {
 
 	@Test
 	public void test01() {
+
 		// 1、可以通过Collection系列集合提供第二stream()或 parallelStream()
 		List<String> list = new ArrayList<String>();
 		Stream<String> stream1 = list.stream();
