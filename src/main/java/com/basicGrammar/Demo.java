@@ -14,22 +14,22 @@ public class Demo {
 
 	public static void main(String[] args) {
 
-		for (float i = 1f; i < 10 + 0.1f; i = i + 0.1f) {
+		for (float i = 1; i < 10 + 0.1f; i = i + 0.1f) {
 			System.out.println(i);
 		}
-		float ff = 1f;
-		ff = ff + 0.1f;
-		System.out.println(ff);
-		ff = ff + 0.1f;
-		System.out.println(ff);
-		ff = ff + 0.1f;
-		System.out.println(ff);
-		ff = ff + 0.1f;
-		System.out.println(ff);
-		ff = ff + 0.1f;
-		System.out.println(ff);
-		ff = ff + 0.1f;
-		System.out.println(ff);
+		// float ff = 1f;
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
+		// ff = ff + 0.1f;
+		// System.out.println(ff);
 
 	}
 }
