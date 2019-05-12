@@ -9,6 +9,11 @@ package com.basicGrammar;
  */
 class KeyWordDemo {
 
+	/**
+	 * 启动类.
+	 * @param args
+	 * @see
+	 */
 	public static void main(String[] args) {
 
 		System.out.println("HelloWorld");
