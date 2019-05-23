@@ -3,7 +3,8 @@ package com.juc;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 原子性验证
+ * 原子性验证<br/>
+ * https://www.cnblogs.com/it-life-nathan/p/6488757.html
  */
 public class TestAtomicDemo {
   public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class TestAtomicDemo {
 
 
 /**
- * 原子变量  CAS算法
+ * 原子变量 CAS算法
  */
 class AtomicThread implements Runnable {
 
