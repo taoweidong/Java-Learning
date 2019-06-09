@@ -15,6 +15,10 @@ public class TestProductorAndConsumer {
 		new Thread(productor, "生产者A").start();
 		new Thread(consumer, "消费者B").start();
 
+		//多个线程时会产生虚假唤醒的问题
+		new Thread(productor, "生产者C").start();
+		new Thread(consumer, "消费者D").start();
+
 	}
 }
 
