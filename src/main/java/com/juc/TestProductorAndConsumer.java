@@ -1,5 +1,9 @@
 package com.juc;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 生成者消费者问题.
  */
@@ -28,39 +32,53 @@ class Clerk {
 	// 共享变量：存在多线程安全问题
 	private int product = 0;
 
-	public synchronized void get() {
+	// 锁对象
+	private Lock lock = new ReentrantLock();
 
-		// 2. 生产者获取线程 此时product=0
-		// 为了避免虚假唤醒问题，应该总是使用在循环中
-		while (product >= 1) {// product =0
-			System.out.println("产品已满！");
-			try {
-				// 5 生产者抢到资源获取线程 此时product=1，线程等待，此时没有其他线程唤醒，形成死锁问题
-				this.wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+	// 对应唤醒机制
+	private Condition condition = lock.newCondition();
+
+	public void get() {
+
+		lock.lock();
+
+		try {
+			while (product >= 1) {
+				System.out.println("产品已满！");
+				try {
+					condition.await();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+			// 生产商品
+			System.out.println(Thread.currentThread().getName() + "--->" + ++product);
+			condition.signalAll();
+		} finally {
+			lock.unlock();
 		}
-		// 生产商品
-		// 3. 生产者获取线程 此时product=1，此时唤醒消费者
-		System.out.println(Thread.currentThread().getName() + "--->" + ++product);
-		this.notifyAll();
+
 	}
 
-	public synchronized void sale() {
+	public void sale() {
 
-		// 1. 消费者获取线程 此时product=0 循环次数为 0
-		while (product <= 0) {
-			System.out.println("缺货！");
-			try {
-				this.wait();// 2. 消费者获取线程 此时线程等待，线程再次被唤醒后从这里开始继续往下执行
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		// 加锁
+		lock.lock();
+		try {
+			while (product <= 0) {
+				System.out.println("缺货！");
+				try {
+					condition.await();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
+			System.out.println(Thread.currentThread().getName() + "---->" + --product);
+			condition.signalAll();
+		} finally {
+			// 释放锁
+			lock.unlock();
 		}
-		System.out.println(Thread.currentThread().getName() + "---->" + --product);
-		this.notifyAll();
-		// 4 消费者抢到资源获取线程 此时product=1，继续执行，执行后product=0
 	}
 }
 
