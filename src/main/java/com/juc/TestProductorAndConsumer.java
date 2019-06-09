@@ -15,7 +15,7 @@ public class TestProductorAndConsumer {
 		new Thread(productor, "生产者A").start();
 		new Thread(consumer, "消费者B").start();
 
-		//多个线程时会产生虚假唤醒的问题
+		// 多个线程时会产生虚假唤醒的问题
 		new Thread(productor, "生产者C").start();
 		new Thread(consumer, "消费者D").start();
 
@@ -31,7 +31,8 @@ class Clerk {
 	public synchronized void get() {
 
 		// 2. 生产者获取线程 此时product=0
-		if (product >= 1) {// product =0
+		// 为了避免虚假唤醒问题，应该总是使用在循环中
+		while (product >= 1) {// product =0
 			System.out.println("产品已满！");
 			try {
 				// 5 生产者抢到资源获取线程 此时product=1，线程等待，此时没有其他线程唤醒，形成死锁问题
@@ -49,7 +50,7 @@ class Clerk {
 	public synchronized void sale() {
 
 		// 1. 消费者获取线程 此时product=0 循环次数为 0
-		if (product <= 0) {
+		while (product <= 0) {
 			System.out.println("缺货！");
 			try {
 				this.wait();// 2. 消费者获取线程 此时线程等待，线程再次被唤醒后从这里开始继续往下执行
