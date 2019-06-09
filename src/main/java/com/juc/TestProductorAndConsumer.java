@@ -30,18 +30,16 @@ class Clerk {
 		if (product >= 1) {// product =0
 			System.out.println("产品已满！");
 			try {
-				// 4 生产者抢到资源获取线程 此时product=1，线程等待，此时没有其他线程唤醒，形成死锁问题
+				// 5 生产者抢到资源获取线程 此时product=1，线程等待，此时没有其他线程唤醒，形成死锁问题
 				this.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		} else {
-			// 生产商品
-			// 3. 生产者获取线程 此时product=1，此时线程唤醒
-			System.out.println(Thread.currentThread().getName() + "--->" + ++product);
-			this.notifyAll();
 		}
-
+		// 生产商品
+		// 3. 生产者获取线程 此时product=1，此时唤醒消费者
+		System.out.println(Thread.currentThread().getName() + "--->" + ++product);
+		this.notifyAll();
 	}
 
 	public synchronized void sale() {
@@ -50,15 +48,14 @@ class Clerk {
 		if (product <= 0) {
 			System.out.println("缺货！");
 			try {
-				this.wait();// 2. 消费者获取线程 此时product=1 此时线程等待
+				this.wait();// 2. 消费者获取线程 此时线程等待，线程再次被唤醒后从这里开始继续往下执行
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		} else {
-			System.out.println(Thread.currentThread().getName() + "---->" + --product);
-			this.notifyAll();
 		}
-		// 4 消费者抢到资源获取线程 此时product=1，继续执行
+		System.out.println(Thread.currentThread().getName() + "---->" + --product);
+		this.notifyAll();
+		// 4 消费者抢到资源获取线程 此时product=1，继续执行，执行后product=0
 	}
 }
 
