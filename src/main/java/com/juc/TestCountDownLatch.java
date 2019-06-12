@@ -2,6 +2,9 @@ package com.juc;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * CountDownLatch闭锁：在完成某些运算时，只有其他的所有线程的运算全部完成时，当前运算才继续执行
+ */
 public class TestCountDownLatch {
 
 	public static void main(String[] args) {
@@ -48,7 +51,6 @@ class LatchDemo implements Runnable {
 					}
 				}
 			} finally {
-
 				latch.countDown();
 			}
 		}
