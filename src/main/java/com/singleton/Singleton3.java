@@ -26,6 +26,7 @@ public class Singleton3 {
 	public static Singleton3 getInstance() {
 
 		if (instance == null) {
+			// 同步代码块
 			synchronized (Singleton3.class) {
 				if (instance == null) {
 					instance = new Singleton3();
