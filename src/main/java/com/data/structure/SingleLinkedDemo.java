@@ -8,7 +8,7 @@ import java.util.Objects;
  * 单链表实现
  * @author Taoweidong
  */
-public class SingleLinkedList {
+public class SingleLinkedDemo {
 
 	public static void main(String[] args) {
 
