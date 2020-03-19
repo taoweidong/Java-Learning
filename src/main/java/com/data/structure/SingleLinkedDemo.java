@@ -24,20 +24,56 @@ public class SingleLinkedDemo {
 		singleNode.addByOrder(node2);
 		singleNode.showAll();
 
+		//		System.out.println("**************************************");
+		//		SingleHeroNode node4New = new SingleHeroNode(55, "马六000000000", 555);
+		//		singleNode.update(node4New);
+		//		singleNode.showAll();
+		//
+		//		System.out.println("**************************************");
+		//		singleNode.delete(node4New);
+		//		singleNode.showAll();
+		//
+		//		System.out.println("**************************************");
+		//		System.out.println(getLength(singleNode.getHead()));
+		//
+		//		System.out.println("**************************************");
+		//		System.out.println(findLastIndexNode(singleNode.getHead(), 1));
+
 		System.out.println("**************************************");
-		SingleHeroNode node4New = new SingleHeroNode(55, "马六000000000", 555);
-		singleNode.update(node4New);
+		reverseList(singleNode.getHead());
 		singleNode.showAll();
+	}
 
-		System.out.println("**************************************");
-		singleNode.delete(node4New);
-		singleNode.showAll();
+	/**
+	 * 将链表反转
+	 * @param heroNode 待反转的链表
+	 */
+	public static void reverseList(SingleHeroNode heroNode) {
+		//只有一个节点或者链表为空，则直接返回
+		if (heroNode.next == null || heroNode.next.next == null) {
+			return;
+		}
 
-		System.out.println("**************************************");
-		System.out.println(getLength(singleNode.getHead()));
+		//先定义一个新的根节点
+		SingleHeroNode newNode = new SingleHeroNode(0, StringUtils.EMPTY, 0);
+		//辅助变量，遍历旧链表
+		SingleHeroNode current = heroNode.next;
+		//暂存下一个节点
+		SingleHeroNode next = null;
+		//对原来的链表进行遍历，每遍历一个元素，就将这个节点挂载到新节点的前面
+		while (current != null) {
+			//当前节点的下一个节点
+			next = current.next;
+			//把当前节点挂载到新的根节点的下一个节点的前面
+			current.next = newNode.next;
+			//注意此处：将新的头结点挂载到当前节点的前面，用于形成链式结构
+			newNode.next = current;
+			//后移一个节点
+			current = next;
 
-		System.out.println("**************************************");
-		System.out.println(findLastIndexNode(singleNode.getHead(), 1));
+		}
+		heroNode.next = newNode.next;
+
 	}
 
 	/**
