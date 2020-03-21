@@ -27,9 +27,9 @@ public class BubbleSort {
 			return;
 		}
 
-		//需要进行arr.length趟比较:此处减去i的原因就是每进行一次比较就已经有一个最大的值或者最小的值沉到最后，下一次就少一趟比较
-		for (int i = 0; i < arr.length - i; i++) {
-			//第i趟比较
+		//需要进行arr.length趟比较:
+		for (int i = 0; i < arr.length; i++) {
+			//第i趟比较：此处减去i的原因就是每进行一次比较就已经有一个最大的值或者最小的值沉到最后，下一次就少一趟比较
 			for (int j = 0; j < arr.length - i - 1; j++) {
 				// 开始进行比较，如果arr[j]比arr[j+1]的值大，那就交换位置
 				if (arr[j + 1] < arr[j]) {
