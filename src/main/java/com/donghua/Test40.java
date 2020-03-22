@@ -1,5 +1,7 @@
 package com.donghua;
 
+import com.alibaba.fastjson.JSON;
+
 import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Test40 {
 		Hello hello = new Hello();
 		List<Field> fields = getFiledList(hello.getClass());
 		for (Field field : fields) {
-			System.out.println(field.getName());
+			System.out.println(JSON.toJSONString(field));
 		}
 
 	}
