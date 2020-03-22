@@ -62,13 +62,13 @@ public class SingleLinkedDemo {
 		SingleHeroNode next = null;
 		//对原来的链表进行遍历，每遍历一个元素，就将这个节点挂载到新节点的前面
 		while (current != null) {
-			//当前节点的下一个节点
+			//暂存下一节点的值
 			next = current.next;
-			//把当前节点挂载到新的根节点的下一个节点的前面
+			//把当前节点挂载到新根节点的前面
 			current.next = newNode.next;
 			//注意此处：将新的头结点挂载到当前节点的前面，用于形成链式结构
 			newNode.next = current;
-			//后移一个节点
+			//位置向后移动一位
 			current = next;
 
 		}
