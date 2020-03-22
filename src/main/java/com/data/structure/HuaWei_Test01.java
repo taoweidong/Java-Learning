@@ -9,11 +9,9 @@ import java.util.Scanner;
 public class HuaWei_Test01 {
 
 	public static void main(String[] args) {
-
 		Scanner sc = new Scanner(System.in);
 		int A = sc.nextInt();
 		int B = sc.nextInt();
-
 		System.out.println(A * B / getResult(A, B));
 
 	}
@@ -25,7 +23,6 @@ public class HuaWei_Test01 {
 	 * @return 最大公约数
 	 */
 	private static int getResult(int a, int b) {
-
 		if (a < b) {
 			a = a ^ b;
 			b = a ^ b;
