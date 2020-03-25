@@ -4,12 +4,14 @@ package com.nowcoder;
  * @ClassName ReverseList
  * @Description 输入一个链表，反转链表后，输出链表的所有元素。
  * @Author Taowd
- * @Date 2018/5/29 13:40
+ * @Date 2020年3月22日21:44:47
  * @Version V1.0
  */
 public class ReverseList_Test {
 
-	//定义链表结构
+	/**
+	 * 定义链表结构
+	 */
 	public static class ListNode {
 
 		/**
@@ -64,8 +66,6 @@ public class ReverseList_Test {
 			}
 			n2 = n2.next;
 		}
-		System.out.println();
-
 		System.out.println();
 	}
 
