@@ -8,7 +8,9 @@ package com.nowcoder;
  * @Version V1.0
  */
 public class FindKthToTailTest {
+
 	public static void main(String[] args) {
+
 		ListNode node = new ListNode(12);
 		ListNode node1 = new ListNode(34);
 		ListNode node2 = new ListNode(45);
@@ -31,19 +33,20 @@ public class FindKthToTailTest {
 		System.out.println();
 
 		int k = 0;
-		System.out.println(
-				"倒数第" + k + "个结点,计算结果:" + (FindKthToTail(node, k) == null ? null : FindKthToTail(node, k).val));
+		System.out.println("倒数第" + k + "个结点,计算结果:" + (FindKthToTail(node, k) == null ?
+				null :
+				FindKthToTail(node, k).val));
 	}
 
 	/**
 	 * 两个指针，先让第一个指针和第二个指针都指向头结点，然后再让第一个指正走(k-1)步，到达第k个节点。
 	 * 然后两个指针同时往后移动，当第一个结点到达末尾的时候，第二个结点所在位置就是倒数第k个节点了。
-	 *
 	 * @param head
 	 * @param k
 	 * @return
 	 */
 	public static ListNode FindKthToTail(ListNode head, int k) {
+
 		if (head == null || k <= 0) {
 			return null;
 		}
@@ -66,10 +69,12 @@ public class FindKthToTailTest {
 
 	// 定义链表结构
 	public static class ListNode {
+
 		/**
 		 * 值
 		 */
 		int val;
+
 		/**
 		 * 后一个节点
 		 */
@@ -77,10 +82,10 @@ public class FindKthToTailTest {
 
 		/**
 		 * 构造函数
-		 *
 		 * @param val
 		 */
 		ListNode(int val) {
+
 			this.val = val;
 		}
 	}

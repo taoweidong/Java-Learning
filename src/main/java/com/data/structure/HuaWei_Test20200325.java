@@ -1,6 +1,8 @@
 package com.data.structure;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 输入一个单向链表，输出该链表中倒数第k个结点，链表的倒数第1个结点为链表的尾指针。
@@ -8,24 +10,34 @@ import java.util.Scanner;
  */
 public class HuaWei_Test20200325 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		Scanner sc = new Scanner(System.in);
-		//输入的链表节点的个数
-		int count = sc.nextInt();
+		BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
 
-		//定义头结点
-		ListNode node = new ListNode(0);
-		//根据输入链表的值构造链表信息
-		for (int i = 0; i < count; i++) {
-			ListNode item = new ListNode(sc.nextInt());
-			addNode(node, item);
-		}
-		//倒数的节点数
-		int find = sc.nextInt();
-		ListNode result = findByLastValue(node, count, find);
-		if (result != null) {
-			System.out.println(result.key);
+		String str;
+		while ((str = sc.readLine()) != null) {
+			//输入的链表节点的个数
+			int count = Integer.valueOf(str);
+
+			//定义头结点
+			ListNode node = new ListNode(0);
+			//根据输入链表的值构造链表信息
+			String[] strArr = sc.readLine().split(" ");
+			for (int i = 0; i < strArr.length; i++) {
+				ListNode item = new ListNode(Integer.valueOf(strArr[i]));
+				addNode(node, item);
+			}
+			//倒数的节点数
+			int find = Integer.valueOf(sc.readLine());
+			if (find == 0) {
+				//异常情况处理
+				System.out.println(0);
+			} else {
+				ListNode result = findByLastValue(node, count, find);
+				if (result != null) {
+					System.out.println(result.key);
+				}
+			}
 		}
 
 	}

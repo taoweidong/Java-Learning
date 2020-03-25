@@ -1,17 +1,16 @@
-package com.data.structure;
+package com.nowcoder;
 
 import java.util.Scanner;
 
 /**
- * 动态规划-0-1背包问题<br/>
- * 问题描述：有 N 件物品和一个容量是 V 的背包。每件物品只能使用一次。第 i 件物品的体积是 vi，价值是 wi。
+ * 动态规划-完全背包问题<br/>
+ * 问题描述：有 N 种物品和一个容量是 V 的背包，每种物品都有无限件可用。第 i 种物品的体积是 vi，价值是 wi 。
  * 求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。输出最大价值。
  * @author Taoweidong
  */
-public class KnapsackProblem {
+public class KnapsackProblem2 {
 
 	public static void main(String[] args) {
-
 		//1、从输入流中获取数据
 		Scanner sc = new Scanner(System.in);
 		//物品的个数
@@ -40,19 +39,22 @@ public class KnapsackProblem {
 		}
 
 		//开始进行动态规划
+		//max表示前i-1种物品中选取若干件物品放入剩余空间为j-k*v[i]的背包中所能得到的最大价值加上k件第i种物品；
+		int max = 0;
 		for (int i = 1; i < dp.length; i++) {
 			for (int j = 1; j < dp[i].length; j++) {
 
-				if (v[i] > j) {
-					//如果待添加的物品的重量v[i]已经超过了当前背包的最大容量j,说明该物品不可以添加到背包中，则当前位置的最大价值仍为前一个物品在此重量下的最大价值
-					dp[i][j] = dp[i - 1][j];
-				} else {
-					//否则，新增的商品容量小于当前背包容量j，则说明可以添加到背包中
-					//dp[i-1][j]:前i-1个物品在容量为j的情况下的最大价值
-					//dp[i-1][j-v[i]] + w[i]:前i-1个物品在容量为j-v[i](当前最大容量j减去当前物品的重量)的情况下的最大价值+当前物品的最大价值
-					//两者取其最大值作为当前节点的价值
-					dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - v[i]] + w[i]);
+				//此处循环计算max的值，最大的值即为当前节点的最大价值
+				for (int k = 0; k * v[i] <= j; k++) {
+					//选择k件相同物品时重量最大为j的最大价值价值
+					int t = dp[i - 1][j - k * v[i]] + k * w[i];
+					if (max < t) {
+						max = t;
+					}
 				}
+				dp[i][j] = max;
+				//特别要注意max要重置为零,否则dp数组里面的值是错误的
+				max = 0;
 			}
 		}
 

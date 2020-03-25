@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.data.structure.practice;
 
 /**
  * 算法学习-稀疏数组

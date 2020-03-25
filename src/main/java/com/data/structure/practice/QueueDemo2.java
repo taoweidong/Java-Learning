@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.data.structure.practice;
 
 /**
  * 队列的学习代码

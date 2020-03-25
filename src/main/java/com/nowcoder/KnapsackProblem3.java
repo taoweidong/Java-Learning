@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.nowcoder;
 
 /**
  * 动态规划-背包问题2-优化版本，记录详细信息

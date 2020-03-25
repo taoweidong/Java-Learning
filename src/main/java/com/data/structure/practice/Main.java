@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.data.structure.practice;
 
 import java.util.Scanner;
 

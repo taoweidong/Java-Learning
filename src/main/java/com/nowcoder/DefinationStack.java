@@ -14,10 +14,10 @@ public class DefinationStack {
 
 	/**
 	 * 测试
-	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {
+
 		DefinationStack stack = new DefinationStack();
 		stack.push(12);
 		stack.push(24);
@@ -38,6 +38,7 @@ public class DefinationStack {
 	 * 最小值
 	 */
 	private int min = Integer.MAX_VALUE;
+
 	/**
 	 * 最小值栈
 	 */
@@ -47,15 +48,17 @@ public class DefinationStack {
 
 	/**
 	 * 添加元素
-	 *
 	 * @param node
 	 */
 	public void push(int node) {
+
 		ensureCapacity(size + 1);
 		elements[size++] = node;
 		if (node <= min) {
-			minStack.push(node);// 把项压入栈顶。
-			min = minStack.peek();// 查看栈顶对象而不移除它。
+			// 把项压入栈顶。
+			minStack.push(node);
+			// 查看栈顶对象而不移除它。
+			min = minStack.peek();
 		} else {
 			minStack.push(min);
 		}
@@ -63,10 +66,10 @@ public class DefinationStack {
 
 	/**
 	 * 自动扩容的方法
-	 *
 	 * @param size
 	 */
 	private void ensureCapacity(int size) {
+
 		int len = elements.length;
 		if (size > len) {
 			int newLen = (len * 3) / 2 + 1;// 扩容之后的长度
@@ -78,6 +81,7 @@ public class DefinationStack {
 	 * 移除栈顶对象并作为此函数的值返回该对象。
 	 */
 	public void pop() {
+
 		Integer top = top();
 		if (top != null) {
 			elements[size - 1] = (Integer) null;
@@ -88,6 +92,7 @@ public class DefinationStack {
 	}
 
 	public int top() {
+
 		if (!empty()) {
 			if (size - 1 > 0) {
 				return elements[size - 1];
@@ -98,19 +103,19 @@ public class DefinationStack {
 
 	/**
 	 * 判断当前栈结构是否为空
-	 *
 	 * @return
 	 */
 	private boolean empty() {
+
 		return size == 0;
 	}
 
 	/**
 	 * 返回栈中的最小元素
-	 *
 	 * @return
 	 */
 	public int min() {
+
 		return min;
 	}
 }

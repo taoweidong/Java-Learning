@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.data.structure.practice;
 
 /**
  * 双向链表实现
