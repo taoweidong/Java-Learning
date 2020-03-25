@@ -6,10 +6,10 @@ import java.util.Stack;
 
 /**
  * @author Taowd
- * @date 2018/5/17 - 21:19
  * @Description 输入一个链表，从尾到头打印链表每个节点的值。
  */
 public class PrintListFromTailToHead_Test {
+
 	public static void main(String[] args) {
 		// 创建链表数据，准备测试
 		ListNode ln = new ListNode(1);
@@ -32,11 +32,11 @@ public class PrintListFromTailToHead_Test {
 
 	/**
 	 * 利用栈的特性：先进后出的特性
-	 *
 	 * @param listNode
 	 * @return
 	 */
 	public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+
 		Stack<Integer> stack = new Stack<Integer>();// 创建一个栈
 		ArrayList<Integer> newList = new ArrayList<Integer>();
 		ListNode t = listNode;
@@ -57,10 +57,13 @@ public class PrintListFromTailToHead_Test {
 	 * 链表结构
 	 */
 	public static class ListNode {
+
 		int val;
+
 		ListNode next = null;
 
 		ListNode(int val) {
+
 			this.val = val;
 		}
 	}

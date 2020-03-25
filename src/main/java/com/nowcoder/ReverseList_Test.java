@@ -4,7 +4,6 @@ package com.nowcoder;
  * @ClassName ReverseList
  * @Description 输入一个链表，反转链表后，输出链表的所有元素。
  * @Author Taowd
- * @Date 2020年3月22日21:44:47
  * @Version V1.0
  */
 public class ReverseList_Test {

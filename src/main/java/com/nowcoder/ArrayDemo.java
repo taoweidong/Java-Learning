@@ -6,7 +6,6 @@ import java.util.Collections;
 
 /**
  * @author Taowd
- * @date 2018/5/27 - 16:14
  * @Description 有数组a[n]，用java代码将数组元素顺序颠倒
  */
 public class ArrayDemo {

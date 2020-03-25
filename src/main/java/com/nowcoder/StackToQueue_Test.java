@@ -4,7 +4,6 @@ import java.util.Stack;
 
 /**
  * @author Taowd
- * @date 2018/5/20 - 17:01
  * @Description 用两个栈实现一个队列的功能?要求给出算法和思路!
  * <p>
  * <分析>：

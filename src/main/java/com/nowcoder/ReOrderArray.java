@@ -13,32 +13,34 @@ import java.util.Vector;
  * @Version V1.0
  */
 public class ReOrderArray {
-    public static void main(String[] args) {
-        int[] a = new int[]{12, 33, 3, 67, 87, 88, 60, 45};
-        System.out.println(Arrays.toString(a));
-        reOrderArray(a);
-        System.out.println(Arrays.toString(a));
-    }
 
-    /**
-     * @param array
-     */
-    public static void reOrderArray(int[] array) {
-        //创建集合存储奇数和偶数
-        Vector<Integer> vector = new Vector<Integer>();
-        Vector<Integer> vector2 = new Vector<Integer>();
+	public static void main(String[] args) {
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                vector.add(array[i]);
-            } else {
-                vector2.add(array[i]);
-            }
-        }
-        vector2.addAll(vector);//合并两个集合
-        //更新数组，最终结果
-        for (int i = 0; i < vector2.size(); i++) {
-            array[i] = vector2.get(i);
-        }
-    }
+		int[] a = new int[] { 12, 33, 3, 67, 87, 88, 60, 45 };
+		System.out.println(Arrays.toString(a));
+		reOrderArray(a);
+		System.out.println(Arrays.toString(a));
+	}
+
+	/**
+	 * @param array
+	 */
+	public static void reOrderArray(int[] array) {
+		//创建集合存储奇数和偶数
+		Vector<Integer> vector = new Vector<Integer>();
+		Vector<Integer> vector2 = new Vector<Integer>();
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] % 2 == 0) {
+				vector.add(array[i]);
+			} else {
+				vector2.add(array[i]);
+			}
+		}
+		vector2.addAll(vector);//合并两个集合
+		//更新数组，最终结果
+		for (int i = 0; i < vector2.size(); i++) {
+			array[i] = vector2.get(i);
+		}
+	}
 }

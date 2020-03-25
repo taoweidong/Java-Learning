@@ -7,7 +7,6 @@ import java.util.Stack;
  * @ClassName DefinationStack
  * @Description 定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的min函数。
  * @Author Taowd
- * @Date 2018/6/19 22:08
  * @Version V1.0
  */
 public class DefinationStack {

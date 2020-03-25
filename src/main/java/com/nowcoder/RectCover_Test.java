@@ -2,7 +2,6 @@ package com.nowcoder;
 
 /**
  * @author Taowd
- * @date 2018/5/24 - 21:35
  * @Description
  */
 public class RectCover_Test {

@@ -4,7 +4,6 @@ package com.nowcoder;
  * @ClassName FindKthToTail
  * @Description 输入一个链表，输出该链表中倒数第k个结点。
  * @Author Taowd
- * @Date 2018/5/29 12:55
  * @Version V1.0
  */
 public class FindKthToTailTest {
