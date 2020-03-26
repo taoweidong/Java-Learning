@@ -2,6 +2,12 @@
 > Java学习项目，学习Java相关知识点，记录一些重要算法问题的代码实现。
 > 注意：com.nowcoder包下是所有算法实现的代码，以下记录的算法代码实现均在此包下，其他作为日常学习使用
 
+## 2020年3月26日
+- 前 K 个高频元素：https://leetcode-cn.com/problems/top-k-frequent-elements/submissions/
+- 最长回文子串(暴力破解，暂时没理解动态规划解法)：https://leetcode-cn.com/problems/longest-palindromic-substring/
+- BigInteger 大数操作基本操作熟悉
+
+
 ## 2020年3月25日
 - 输入一个单向链表，输出该链表中倒数第k个结点，链表的倒数第1个结点为链表的尾指针。
 - 整理代码结构
