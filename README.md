@@ -6,6 +6,7 @@
 - 前 K 个高频元素：https://leetcode-cn.com/problems/top-k-frequent-elements/submissions/
 - 最长回文子串(暴力破解，暂时没理解动态规划解法)：https://leetcode-cn.com/problems/longest-palindromic-substring/
 - BigInteger 大数操作基本操作熟悉
+- 无重复字符的最长子串(暴力破解)：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/submissions/
 
 
 ## 2020年3月25日
