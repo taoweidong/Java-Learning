@@ -16,6 +16,7 @@ public class HuaWei_Test20200328_01 {
 
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
+
 			//输入数据处理
 			String str = sc.nextLine();
 

@@ -19,18 +19,3 @@ public class HuaWei_Test20200305_02 {
 
 }
 
-/**
- * 定义链表结构
- */
-class ListNode2 {
-
-	int key;
-
-	ListNode next;
-
-	public ListNode2(int key) {
-
-		this.key = key;
-	}
-
-}

@@ -3,6 +3,7 @@ package com.data.structure;
 import java.util.Scanner;
 
 /**
+ * 删除链表指定节点
  * @author Taoweidong
  */
 public class HuaWei_Test20200327 {

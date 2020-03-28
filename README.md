@@ -4,13 +4,12 @@
 
 ## 2020年3月28日
 - 最长有效括号子串
-- 
+- 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和
+
 
 ## 2020年3月27日
 - 插入排序原理
 - 查找算式最小值
-
-
 
 ## 2020年3月26日
 - 前 K 个高频元素：https://leetcode-cn.com/problems/top-k-frequent-elements/submissions/
