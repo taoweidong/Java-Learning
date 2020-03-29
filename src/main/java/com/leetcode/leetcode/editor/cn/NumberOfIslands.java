@@ -42,7 +42,54 @@ public class NumberOfIslands {
 
 		public int numIslands(char[][] grid) {
 
-			return 0;
+			if (grid == null || grid.length == 0) {
+				return 0;
+			}
+
+			//行
+			int col = grid.length;
+			//列
+			int row = grid[0].length;
+
+			//小岛的个数
+			int num_islands = 0;
+
+			for (int i = 0; i < col; i++) {
+				for (int j = 0; j < row; j++) {
+					if (grid[i][j] == '1') {
+						//增加小岛个数
+						++num_islands;
+						dfs(grid, i, j);
+					}
+				}
+			}
+
+			return num_islands;
+		}
+
+		/**
+		 * 深度优先遍历-遍历所有的子节点
+		 * @param grid 邻接矩阵
+		 * @param i    行
+		 * @param j    列
+		 */
+		private void dfs(char[][] grid, int i, int j) {
+			//行
+			int col = grid.length;
+			//列
+			int row = grid[0].length;
+			//遍历结束或者已经遍历过，就无需再次进行遍历
+			if (i < 0 || j < 0 || i >= col || j >= row || grid[i][j] == '0') {
+				return;
+			}
+
+			//标志当前已经被遍历过了
+			grid[i][j] = '0';
+			//上下左右方向全部遍历一次
+			dfs(grid, i - 1, j);
+			dfs(grid, i + 1, j);
+			dfs(grid, i, j - 1);
+			dfs(grid, i, j + 1);
 		}
 	}
 	//leetcode submit region end(Prohibit modification and deletion)
