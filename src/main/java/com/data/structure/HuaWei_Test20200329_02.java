@@ -61,8 +61,8 @@ public class HuaWei_Test20200329_02 {
 
 	/**
 	 * 判断当前数字是否为质数:除了1和它本身外，不能被其他自然数整除的数叫做质数
-	 * @param num
-	 * @return
+	 * @param num 待判断数字
+	 * @return True:质数 Flase:非质数
 	 */
 	public static boolean isPrime(int num) {
 
@@ -70,6 +70,12 @@ public class HuaWei_Test20200329_02 {
 		if (num == 2 || num == 3) {
 			return true;
 		}
+
+		//优化：质数都是满足6X+1或者6x-1
+		if (num % 6 == 1 || num % 6 == 5) {
+			return true;
+		}
+
 		//其他判断
 		int sqrt = (int) Math.sqrt(num);
 		for (int i = 2; i <= sqrt; i++) {

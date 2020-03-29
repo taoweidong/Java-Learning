@@ -33,44 +33,41 @@ public class LongestPalindromicSubstring {
 
 		public String longestPalindrome(String s) {
 
-			if (s.length() == 1) {
+			if (s == null || s.length() == 1) {
 				return s;
 			}
 
-			//回文子串的长度
-			int max = 0;
-			//回文子串的内容
-			String subStrMax = "";
-
+			String result = "";
 			for (int i = 0; i < s.length(); i++) {
-				for (int j = i + 1; j <= s.length(); j++) {
-					//表示每一个子串
-					String subStr = s.substring(i, j);
-					if (isHuiWen(subStr) && subStr.length() > max) {
-						subStrMax = s.substring(i, j);
-						max = Math.max(subStrMax.length(), max);
-					}
-				}
+				//以i为中心的最长回文子串
+				String str = palindrome(s, i, i);
+				//以i和i+1为中心的最长回文子串
+				String str2 = palindrome(s, i, i + 1);
+
+				result = result.length() > str.length() ? result : str;
+				result = result.length() > str2.length() ? result : str2;
+
 			}
 
-			return subStrMax;
+			return result;
 		}
 
 		/**
 		 * 判断是否为回文子串
-		 * @param str 待判断的字符串
-		 * @return ture:表示是回文字符串
+		 * @param str   待判断的字符串
+		 * @param left  中心左边
+		 * @param right 中心右边
+		 * @return 回文串
 		 */
-		public boolean isHuiWen(String str) {
-
-			int length = str.length();
-			for (int i = 0; i < length / 2; i++) {
-				if (str.charAt(i) != str.charAt(length - i - 1)) {
-					return false;
-				}
+		public String palindrome(String str, int left, int right) {
+			//中心扩散法
+			while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+				//如果中心两边的字符相同，则进行位置移动，继续检查下一位
+				left--;
+				right++;
 			}
 
-			return true;
+			return str.substring(left + 1, right);
 		}
 	}
 	//leetcode submit region end(Prohibit modification and deletion)
