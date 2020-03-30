@@ -1,7 +1,5 @@
 package com.data.structure;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -19,30 +17,15 @@ public class HuaWei_Test20200329_03 {
 			//输入参数
 			String input = sc.nextLine();
 
-			Map<Character, Integer> map = new HashMap<>(input.length());
+			//最长连续子串的起始位置
+			int start = 0;
+			//最长连续子串的长度
+			int maxLength = 0;
+			for (int i = 0, j = i + 1; i < input.length(); i++) {
+				if (input.charAt(i) == input.charAt(j)) {
+					j++;
+				} else {
 
-			for (int i = 0; i < input.length(); i++) {
-				int count = 0;
-				if (map.containsKey(input.charAt(i))) {
-					//如果当前字符已经在集合中存在了
-					count = map.get(input.charAt(i));
-				}
-
-				for (int j = i + 1; j < input.length(); j++) {
-
-					if (count != 0) {
-
-						map.put(input.charAt(i), map.getOrDefault(input.charAt(i), 0) + 1);
-
-					} else {
-						map.put(input.charAt(i), map.getOrDefault(input.charAt(i), 0) + 1);
-					}
-
-					if (input.charAt(i) == input.charAt(j)) {
-
-					} else {
-						i = j;
-					}
 				}
 			}
 
