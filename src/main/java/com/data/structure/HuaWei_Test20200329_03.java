@@ -15,19 +15,47 @@ public class HuaWei_Test20200329_03 {
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
 			//输入参数
-			String input = sc.nextLine();
+			String str = sc.nextLine();
+			char[] chars = str.toCharArray();
 
 			//最长连续子串的起始位置
 			int start = 0;
 			//最长连续子串的长度
 			int maxLength = 0;
-			for (int i = 0, j = i + 1; i < input.length(); i++) {
-				if (input.charAt(i) == input.charAt(j)) {
-					j++;
-				} else {
+			for (int i = 0, j = 0; j < chars.length; j++) {
+
+				if (j == 0) {
+					maxLength = 1;
+					continue;
+				}
+
+				//分界点时
+				if (chars[j] != chars[j - 1]) {
+					if (maxLength < j - i) {
+						maxLength = j - i;
+						start = i;
+
+					}//题目中要求的，如果长度相同取ASCII比较小的那一串
+					else if (maxLength == j - i && chars[start] > chars[j - 1]) {
+						start = i;
+					}
+					i = j;
+				}
+
+				//处理后缀为最长连续子串的情况
+				if (j == chars.length - 1) {
+					if (maxLength < j - i + 1) {
+						maxLength = j - i + 1;
+						start = i;
+					} else if (maxLength == j - i + 1 && chars[start] > chars[j]) {
+						start = i;
+					}
 
 				}
+
 			}
+
+			System.out.println(str.substring(start, maxLength + start));
 
 		}
 	}

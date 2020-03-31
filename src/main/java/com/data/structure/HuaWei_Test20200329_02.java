@@ -72,7 +72,7 @@ public class HuaWei_Test20200329_02 {
 		}
 
 		//优化：质数都是满足6X+1或者6x-1
-		if (num % 6 == 1 || num % 6 == 5) {
+		if (num % 6 != 1 && num % 6 != 5) {
 			return true;
 		}
 
