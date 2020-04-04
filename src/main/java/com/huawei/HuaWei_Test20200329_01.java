@@ -54,6 +54,7 @@ public class HuaWei_Test20200329_01 {
      * @return 回文串
      */
     public static String palindrome(String str, int left, int right) {
+
         //中心扩散法
         while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
             //如果中心两边的字符相同，则进行位置移动，继续检查下一位

@@ -76,8 +76,6 @@ public class HuaWei_Test20200404_03 {
                 cpuList.add(taskList.poll());
             }
 
-            //记录任务的顺序
-            int index = cpuCount;
             //记录最终的结果，任务执行完毕的最小耗时
             int result = 0;
             //每次减去的最小任务
@@ -93,7 +91,7 @@ public class HuaWei_Test20200404_03 {
                         //任务执行,减去当前cpu中的最小任务时间
                         cpuList.set(i, cpuList.get(i) - min);
                         //检查cpu中的任务是否已经执行完毕，如果已经执行完毕，则添加新的任务进来
-                        if (cpuList.get(i) == 0 && index < taskCount) {
+                        if (cpuList.get(i) == 0) {
                             if (!taskList.isEmpty()) {
                                 //取最小的任务
                                 cpuList.set(i, taskList.poll());

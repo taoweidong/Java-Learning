@@ -17,32 +17,33 @@ import java.util.Stack;
  * 链接：https://leetcode-cn.com/problems/valid-parentheses
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * 4
+ *
  * @author Taoweidong
  */
 public class HuaWei_Test20200328_02 {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		while (sc.hasNext()) {
-			Map<Character, Character> map = new HashMap(3);
-			map.put('(', ')');
-			map.put('[', ']');
-			map.put('{', '}');
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            Map<Character, Character> map = new HashMap(3);
+            map.put('(', ')');
+            map.put('[', ']');
+            map.put('{', '}');
 
-			Stack<Character> stack = new Stack<>();
-			for (Character item : sc.nextLine().toCharArray()) {
-				if ('(' == item || '[' == item || '{' == item) {
-					stack.add(item);
-				} else {
-					if (!stack.isEmpty() && map.get(stack.peek()).equals(item)) {
-						//如果匹配就删除栈顶元素，也就是与之匹配的左括号
-						stack.pop();
-					}
-				}
-			}
-			//如果最终栈中为空则匹配
-			System.out.println(stack.isEmpty());
-		}
-	}
+            Stack<Character> stack = new Stack<>();
+            for (Character item : sc.nextLine().toCharArray()) {
+                if ('(' == item || '[' == item || '{' == item) {
+                    stack.add(item);
+                } else {
+                    if (!stack.isEmpty() && map.get(stack.peek()).equals(item)) {
+                        //如果匹配就删除栈顶元素，也就是与之匹配的左括号
+                        stack.pop();
+                    }
+                }
+            }
+            //如果最终栈中为空则匹配
+            System.out.println(stack.isEmpty());
+        }
+    }
 }
