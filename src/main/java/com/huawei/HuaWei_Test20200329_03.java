@@ -33,7 +33,7 @@ public class HuaWei_Test20200329_03 {
                 }
 
                 if (chars[j] != chars[j - 1]) {
-                    //如果新的连续字符串长度比原来的长，那么久更新起始位置和长度
+                    //如果新的连续字符串长度比原来的长，那么就更新起始位置和长度
                     if (maxLength < j - i) {
                         maxLength = j - i;
                         start = i;
