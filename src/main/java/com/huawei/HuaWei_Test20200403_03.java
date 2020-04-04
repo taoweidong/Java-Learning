@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.huawei;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

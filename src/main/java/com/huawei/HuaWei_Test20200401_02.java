@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.huawei;
 
 import com.alibaba.fastjson.JSON;
 
