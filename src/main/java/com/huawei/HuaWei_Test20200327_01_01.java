@@ -21,7 +21,6 @@ public class HuaWei_Test20200327_01_01 {
             arr[i] = in.nextInt();
         }
         int min = Integer.MAX_VALUE;
-        boolean flag = false;
         int y = 0;
         for (int i = 0; i < 10; i++) {
             int x = arr[i];

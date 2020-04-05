@@ -25,20 +25,20 @@ public class HuaWei_Test20200327_01 {
             }
 
             //开始遍历计算
-            int max = Integer.MAX_VALUE;
+            int min = Integer.MAX_VALUE;
             for (int i = 0; i < arr.length; i++) {
                 for (int j = 0; j < arr.length; j++) {
                     if (i != j) {
                         for (int k = 0; k < arr.length; k++) {
                             if (i != k && j != k) {
                                 int value = arr[i] + arr[i] * arr[j] - arr[j] + arr[k];
-                                max = Math.min(max, value);
+                                min = Math.min(min, value);
                             }
                         }
                     }
                 }
             }
-            System.out.println(max);
+            System.out.println(min);
         }
     }
 }

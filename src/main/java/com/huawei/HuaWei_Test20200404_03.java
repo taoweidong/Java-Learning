@@ -81,38 +81,36 @@ public class HuaWei_Test20200404_03 {
             //每次减去的最小任务
             int min = Collections.min(cpuList);
 
-
-            //开始进行任务执行
             while (true) {
-                //cpu当前的最小任务
+                //当前cpu中的最小任务
                 int currentMin = Integer.MAX_VALUE;
                 for (int i = 0; i < cpuList.size(); i++) {
                     if (cpuList.get(i) != 0) {
-                        //任务执行,减去当前cpu中的最小任务时间
                         cpuList.set(i, cpuList.get(i) - min);
-                        //检查cpu中的任务是否已经执行完毕，如果已经执行完毕，则添加新的任务进来
                         if (cpuList.get(i) == 0) {
                             if (!taskList.isEmpty()) {
-                                //取最小的任务
+                                //从任务列表中取出一个任务更新到cpu中
                                 cpuList.set(i, taskList.poll());
                             }
                         }
-
-
                     }
-                    //求当前任务的最小值
-                    if (cpuList.get(i) != 0 && cpuList.get(i) < currentMin) {
+                    //获取当前任务的最小值
+                    if (cpuList.get(i) != 0 && currentMin > cpuList.get(i)) {
                         currentMin = cpuList.get(i);
                     }
                 }
+                //cpu总耗时
                 result += min;
 
                 if (currentMin == Integer.MAX_VALUE) {
-                    //CPU处理完毕
+                    //cpu任务已经处理完毕
                     break;
                 }
+                //如果cpu换在执行任务，则将当前cpu中的最小任务更新一下，作为下一次任务减去的时间
                 min = currentMin;
+
             }
+
 
             //输出结果
             System.out.println(result);

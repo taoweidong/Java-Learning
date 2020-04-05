@@ -35,21 +35,22 @@ public class HuaWei_Test20200403_03 {
         while (sc.hasNext()) {
             Map<String, Integer> map = new LinkedHashMap<>();
             //处理输入：a:3,b:5,c:2@a:1,b:2
-            String inputStr = sc.nextLine();
-            String strA = inputStr.split("@")[0];
-            String strB = inputStr.split("@")[1];
+            String[] inputStr = sc.nextLine().split("@");
 
             //处理全量字符串集
-            for (String item : strA.split(",")) {
+            for (String item : inputStr[0].split(",")) {
                 String[] tempArr = item.split(":");
                 map.put(tempArr[0], Integer.valueOf(tempArr[1]));
             }
 
-            //进行逻辑处理
-            for (String item : strB.split(",")) {
-                String[] tempArr = item.split(":");
-                map.put(tempArr[0], map.get(tempArr[0]) - Integer.valueOf(tempArr[1]));
+            if (inputStr.length == 2) {
+                //进行逻辑处理
+                for (String item : inputStr[1].split(",")) {
+                    String[] tempArr = item.split(":");
+                    map.put(tempArr[0], map.get(tempArr[0]) - Integer.valueOf(tempArr[1]));
+                }
             }
+
 
             //输出结果
             StringBuilder output = new StringBuilder();

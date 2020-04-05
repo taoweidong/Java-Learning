@@ -23,6 +23,7 @@ public class HuaWei_Test20200329_03 {
             String str = sc.nextLine();
             char[] chars = str.toCharArray();
 
+
             int start = 0;
             int maxLength = 0;
 
@@ -57,6 +58,8 @@ public class HuaWei_Test20200329_03 {
                     //最后一个位置了，不需要再更新索引位置了
                 }
             }
+
+
             System.out.println(str.substring(start, start + maxLength));
 
         }

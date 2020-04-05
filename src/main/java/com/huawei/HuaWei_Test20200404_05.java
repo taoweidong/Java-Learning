@@ -39,13 +39,13 @@ import java.util.Scanner;
  * 0x0D
  * 0x0A
  * 0x0B
- *输出：B D 12 34 AB CD D 12 34 AB CD
+ * 输出：B D 12 34 AB CD D 12 34 AB CD
+ *
  * @author Taoweidong
  */
 public class HuaWei_Test20200404_05 {
 
     public static void main(String[] args) {
-
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
             //输入信息
