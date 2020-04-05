@@ -29,64 +29,66 @@ package com.huawei;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalField;
+import java.time.temporal.WeekFields;
 import java.util.Scanner;
 
 /**
+ * 日期函数
+ *
  * @author Taoweidong
  */
 public class HuaWei_Test20200404_07 {
 
     public static void main(String[] args) {
 
+
         Scanner in = new Scanner(System.in);
-        //输入样例：2018 02 3 1
-        String[] str = in.nextLine().split(" ");
-        //年
-        int year = Integer.valueOf(str[0]);
-        //月
-        int month = Integer.valueOf(str[1]);
-        //周
-        int week = Integer.valueOf(str[2]);
-        //周几
-        int day = Integer.valueOf(str[3]);
-
         String result = "0";
-        try {
-            LocalDate date = LocalDate.of(year, month, 1);
-            //检查周和周几的合法性
-            if (week <= 0 || week > 4) {
-                result = "0";
-            }
-            if (day <= 0 || day > 7) {
-                result = "0";
-            }
+        while (in.hasNext()) {
 
-            //将date月的日期一个一个遍历，检查周和天是否在本月
-            while (month == date.getMonthValue()) {
-                //当前日期为本月的第几周
-                int currentWeek = date.getDayOfWeek().getValue();
-                //可以获取当前日期为周几
-                int currentWeekDay = date.getDayOfWeek().getValue();
-                //检查周是否在本月
-                if (currentWeek == week) {
-                    //如果当前周没有指定的周
-                    if (currentWeek > day) {
-                        result = date.with(ChronoField.DAY_OF_WEEK, 1).toString();
-                        break;
-                    }
-
-                    //检查当天是否在本月
-                    if (currentWeekDay == day) {
-                        result = date.format(DateTimeFormatter.ofPattern("yyyy-mm-dd"));
-                        break;
-                    }
+            //输入样例：2018 02 3 1
+            String[] str = in.nextLine().split(" ");
+            //年
+            int year = Integer.valueOf(str[0]);
+            //月
+            int month = Integer.valueOf(str[1]);
+            //周
+            int week = Integer.valueOf(str[2]);
+            //周几
+            int day = Integer.valueOf(str[3]);
+            try {
+                LocalDate date = LocalDate.of(year, month, 1);
+                //检查周和周几的合法性
+                if (week <= 0 || week > 4) {
+                    result = "0";
+                    break;
                 }
-                date = date.plusDays(1);
+                if (day <= 0 || day > 7) {
+                    result = "0";
+                    break;
+                }
+                TemporalField weekFields = WeekFields.SUNDAY_START.weekOfMonth();
+                //将date月的日期一个一个遍历，检查周和天是否在本月
+                while (month == date.getMonthValue()) {
+                    //当前日期为本月的第几周
+                    int currentWeek = date.get(weekFields);
+                    //可以获取当前日期为周几
+                    int currentWeekDay = date.getDayOfWeek().getValue();
+                    //检查给定周和天是否在本月
+                    if (currentWeek == week && currentWeekDay == day) {
+                        result = date.format(DateTimeFormatter.ofPattern("YYYY-MM-dd"));
+                        break;
+                    }
+                    date = date.plusDays(1);
 
+                }
+                System.out.println(result);
+
+            } catch (Exception e) {
+                result = "0";
+                break;
             }
-
-        } catch (Exception e) {
-            result = "0";
         }
 
         System.out.println(result);
