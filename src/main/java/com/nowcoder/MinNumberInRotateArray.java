@@ -8,21 +8,22 @@ package com.nowcoder;
  */
 public class MinNumberInRotateArray {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		int[] temp = { 3, 4, 5, 1, 2 };
-		System.out.println(minNumberInRotateArray(temp));
+        int[] temp = {3, 4, 5, 1, 2};
+        System.out.println(minNumberInRotateArray(temp));
 
-	}
+    }
 
-	/**
-	 * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
-	 * 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
-	 * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
-	 * @param array
-	 * @return
-	 */
-	public static int minNumberInRotateArray(int[] array) {
+    /**
+     * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
+     * 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
+     * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
+     *
+     * @param array
+     * @return
+     */
+    public static int minNumberInRotateArray(int[] array) {
    /*     采用二分法解答这个问题，
         mid = low + (high - low)/2
         需要考虑三种情况：
@@ -43,20 +44,20 @@ public class MinNumberInRotateArray {
         如果high = mid - 1，就会产生错误， 因此high = mid
         但情形(1)中low = mid + 1就不会错误*/
 
-		int low = 0;//最小位置
-		int high = array.length - 1;//最大位置
-		while (low < high) {
-			int mid = low + (high - low) / 2;//计算中间位置
-			if (array[mid] > array[high]) {//如果中间值大于最大位置上的值，则说明 最小值在中间位置的右侧，最小值位置修改至中间位置的右边
-				low = mid + 1;
-			} else if (array[mid] == array[high]) {//如果中间位置的值和最大位置的值相同，将最大位置向左移一个位置
-				high = high - 1;
-			} else {//如果中间位置的值小于最大位置的值，则将最大值的位置调整到中间位置，最小值肯定在左边
-				high = mid;
-			}
-		}
-		return array[low];
-	}
+        int low = 0;//最小位置
+        int high = array.length - 1;//最大位置
+        while (low < high) {
+            int mid = low + (high - low) / 2;//计算中间位置
+            if (array[mid] > array[high]) {//如果中间值大于最大位置上的值，则说明 最小值在中间位置的右侧，最小值位置修改至中间位置的右边
+                low = mid + 1;
+            } else if (array[mid] == array[high]) {//如果中间位置的值和最大位置的值相同，将最大位置向左移一个位置
+                high = high - 1;
+            } else {//如果中间位置的值小于最大位置的值，则将最大值的位置调整到中间位置，最小值肯定在左边
+                high = mid;
+            }
+        }
+        return array[low];
+    }
 
 }
 

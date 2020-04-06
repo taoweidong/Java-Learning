@@ -6,28 +6,29 @@ package com.nowcoder;
  */
 public class JumpFloorTest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println(JumpFloor(20));
-	}
+        System.out.println(JumpFloor(20));
+    }
 
-	/**
-	 * 青蛙跳台阶问题
-	 * @param target
-	 * @return
-	 */
-	public static int JumpFloor(int target) {
-		/**
-		 * 分析： f(1)=1;f(2)=2;f(3)=3;f(4)=5....f(n)=f(n-1)+f(n-2)
-		 */
-		if (target == 0) {
-			return 0;
-		} else if (target == 1) {
-			return 1;
-		} else if (target == 2) {
-			return 2;
-		} else {
-			return JumpFloor(target - 1) + JumpFloor(target - 2);
-		}
-	}
+    /**
+     * 青蛙跳台阶问题
+     *
+     * @param target
+     * @return
+     */
+    public static int JumpFloor(int target) {
+        /**
+         * 分析： f(1)=1;f(2)=2;f(3)=3;f(4)=5....f(n)=f(n-1)+f(n-2)
+         */
+        if (target == 0) {
+            return 0;
+        } else if (target == 1) {
+            return 1;
+        } else if (target == 2) {
+            return 2;
+        } else {
+            return JumpFloor(target - 1) + JumpFloor(target - 2);
+        }
+    }
 }

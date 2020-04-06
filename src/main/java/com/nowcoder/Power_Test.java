@@ -6,14 +6,14 @@ package com.nowcoder;
  */
 public class Power_Test {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println(Power(12.23, 2));
+        System.out.println(Power(12.23, 2));
 
-	}
+    }
 
-	public static double Power(double base, int exponent) {
+    public static double Power(double base, int exponent) {
 
-		return Math.pow(base, exponent);
-	}
+        return Math.pow(base, exponent);
+    }
 }

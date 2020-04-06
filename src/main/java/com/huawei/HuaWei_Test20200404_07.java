@@ -59,8 +59,8 @@ public class HuaWei_Test20200404_07 {
             int day = Integer.valueOf(str[3]);
             try {
                 LocalDate date = LocalDate.of(year, month, 1);
-                //检查周和周几的合法性
-                if (week <= 0 || week > 4) {
+                //简单检查周和周几的合法性
+                if (week <= 0 || week > 5) {
                     result = "0";
                     break;
                 }
