@@ -1,7 +1,5 @@
 package com.offer;
 
-import com.alibaba.fastjson.JSON;
-
 /**
  * 问题描述：有 N 件物品和一个容量是 V 的背包。每件物品只能使用一次。第 i 件物品的体积是 vi，价值是 wi。
  *
@@ -49,8 +47,6 @@ public class HuaWeiTest_02 {
 
             }
         }
-
-        System.out.println(JSON.toJSONString(dp));
 
         return dp[n][v];
     }
