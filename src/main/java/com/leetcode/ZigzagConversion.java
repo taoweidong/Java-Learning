@@ -38,50 +38,51 @@ import java.util.List;
 
 /**
  * Z 字形变换
+ *
  * @author Taoweidong
  */
 public class ZigzagConversion {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new ZigzagConversion().new Solution();
-		System.out.println(solution.convert("HelloWorldLeetCodeLearning", 4));
-	}
+        Solution solution = new ZigzagConversion().new Solution();
+        System.out.println(solution.convert("HelloWorldLeetCodeLearning", 4));
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public String convert(String s, int numRows) {
+        public String convert(String s, int numRows) {
 
-			if (numRows == 1) {
-				return s;
-			}
+            if (numRows == 1) {
+                return s;
+            }
 
-			List<StringBuilder> rows = new ArrayList<>();
-			for (int i = 0; i < Math.min(numRows, s.length()); i++) {
-				rows.add(new StringBuilder());
-			}
+            List<StringBuilder> rows = new ArrayList<>();
+            for (int i = 0; i < Math.min(numRows, s.length()); i++) {
+                rows.add(new StringBuilder());
+            }
 
-			int curRow = 0;
-			boolean goingDown = false;
+            int curRow = 0;
+            boolean goingDown = false;
 
-			for (char c : s.toCharArray()) {
-				rows.get(curRow).append(c);
-				if (curRow == 0 || curRow == numRows - 1) {
-					// 是否需要换行
-					goingDown = !goingDown;
-				}
-				curRow += goingDown ? 1 : -1;
-			}
+            for (char c : s.toCharArray()) {
+                rows.get(curRow).append(c);
+                if (curRow == 0 || curRow == numRows - 1) {
+                    // 是否需要换行
+                    goingDown = !goingDown;
+                }
+                curRow += goingDown ? 1 : -1;
+            }
 
-			// 处理待返回的数据
-			StringBuilder ret = new StringBuilder();
-			for (StringBuilder row : rows) {
-				ret.append(row);
-			}
-			return ret.toString();
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            // 处理待返回的数据
+            StringBuilder ret = new StringBuilder();
+            for (StringBuilder row : rows) {
+                ret.append(row);
+            }
+            return ret.toString();
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }

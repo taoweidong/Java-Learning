@@ -13,54 +13,55 @@ import java.util.Arrays;
 
 /**
  * 最接近的三数之和
+ *
  * @author Taoweidong
  */
 public class ThreeSumClosest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new ThreeSumClosest().new Solution();
-		int[] nums = { -1, 2, 1, -4 };
-		int target = 1;
-		System.out.println(solution.threeSumClosest(nums, target));
-	}
+        Solution solution = new ThreeSumClosest().new Solution();
+        int[] nums = {-1, 2, 1, -4};
+        int target = 1;
+        System.out.println(solution.threeSumClosest(nums, target));
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public int threeSumClosest(int[] nums, int target) {
+        public int threeSumClosest(int[] nums, int target) {
 
-			// 排序
-			Arrays.sort(nums);
+            // 排序
+            Arrays.sort(nums);
 
-			// 记录初始结果
-			int returnCount = nums[0] + nums[1] + nums[2];
+            // 记录初始结果
+            int returnCount = nums[0] + nums[1] + nums[2];
 
-			for (int i = 0; i < nums.length; i++) {
-				int start = i + 1;
-				int end = nums.length - 1;
+            for (int i = 0; i < nums.length; i++) {
+                int start = i + 1;
+                int end = nums.length - 1;
 
-				while (start < end) {
-					int sum = nums[start] + nums[end] + nums[i];
-					// 判断距离远近
-					if (Math.abs(target - sum) < Math.abs(target - returnCount)) {
-						// 更新结果
-						returnCount = sum;
-					}
-					// 调整索引位置
-					if (sum > target) {
-						end--;
-					} else if (sum < target) {
-						start++;
-					} else {
-						return returnCount;
-					}
-				}
-			}
+                while (start < end) {
+                    int sum = nums[start] + nums[end] + nums[i];
+                    // 判断距离远近
+                    if (Math.abs(target - sum) < Math.abs(target - returnCount)) {
+                        // 更新结果
+                        returnCount = sum;
+                    }
+                    // 调整索引位置
+                    if (sum > target) {
+                        end--;
+                    } else if (sum < target) {
+                        start++;
+                    } else {
+                        return returnCount;
+                    }
+                }
+            }
 
-			return returnCount;
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            return returnCount;
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }
