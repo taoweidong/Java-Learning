@@ -27,60 +27,60 @@ import java.util.*;
 public class LetterCombinationsOfAPhoneNumber {
     public static void main(String[] args) {
         Solution solution = new LetterCombinationsOfAPhoneNumber().new Solution();
-        System.out.println(solution.letterCombinations("25"));
+        System.out.println(solution.letterCombinations("235"));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public List<String> letterCombinations(String digits) {
-            //结果
-            List<String> result = new ArrayList<>();
 
+        //字典
+        Map<String, String> map = new HashMap<String, String>(8) {
+            {
+                put("2", "abc");
+                put("3", "def");
+                put("4", "ghi");
+                put("5", "jkl");
+                put("6", "mno");
+                put("7", "pqrs");
+                put("8", "tuv");
+                put("9", "wxyz");
+            }
+        };
+
+
+        //结果
+        List<String> result = new ArrayList<>();
+
+        public List<String> letterCombinations(String digits) {
             if (digits == null || digits.length() == 0) {
                 return Collections.EMPTY_LIST;
             }
-
-            //字典
-            Map<String, String> map = new HashMap<>(8);
-            map.put("2", "abc");
-            map.put("3", "def");
-            map.put("4", "ghi");
-            map.put("5", "jkl");
-            map.put("6", "mno");
-            map.put("7", "pqrs");
-            map.put("8", "tuv");
-            map.put("9", "wxyz");
-
-            result.addAll(backtrack("", digits, map));
-
-
+            backtrack("", digits);
             return result;
         }
 
         /**
          * 递归回溯
+         * 如果一个候选解最后被发现并不是可行解，回溯算法会舍弃它，并在前面的一些步骤做出一些修改，并重新尝试找到可行解。
          *
          * @param s
          * @param digits
-         * @param map
          * @return
          */
-        private List<String> backtrack(String s, String digits, Map<String, String> map) {
-            List<String> result = new ArrayList<>();
+        private void backtrack(String s, String digits) {
             //递归退出条件
             if (digits == null || digits.length() == 0) {
                 result.add(s);
-                return result;
-            }
-            String letter = map.get(digits.substring(0, 1));
+            } else {
 
-            for (int i = 0; i < letter.length(); i++) {
-                String str = letter.substring(i, i + 1);
-                //回溯
-                backtrack(s + str, digits.substring(1), map);
-            }
+                String letter = map.get(digits.substring(0, 1));
 
-            return result;
+                for (int i = 0; i < letter.length(); i++) {
+                    String str = letter.substring(i, i + 1);
+                    //此处采用回溯法
+                    backtrack(s + str, digits.substring(1));
+                }
+            }
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
