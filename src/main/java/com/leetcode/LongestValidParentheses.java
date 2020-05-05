@@ -21,41 +21,42 @@ import java.util.Stack;
 
 /**
  * 最长有效括号
+ *
  * @author Taoweidong
  */
 public class LongestValidParentheses {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new LongestValidParentheses().new Solution();
-		System.out.println(solution.longestValidParentheses("((())"));
-	}
+        Solution solution = new LongestValidParentheses().new Solution();
+        System.out.println(solution.longestValidParentheses("((())"));
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public int longestValidParentheses(String s) {
+        public int longestValidParentheses(String s) {
 
-			int maxans = 0;
-			Stack<Integer> stack = new Stack<>();
-			stack.push(-1);
+            int maxans = 0;
+            Stack<Integer> stack = new Stack<>();
+            stack.push(-1);
 
-			for (int i = 0; i < s.length(); i++) {
-				if (s.charAt(i) == '(') {
-					stack.push(i);
-				} else {
-					stack.pop();
-					if (stack.empty()) {
-						stack.push(i);
-					} else {
-						maxans = Math.max(maxans, i - stack.peek());
-					}
-				}
-			}
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == '(') {
+                    stack.push(i);
+                } else {
+                    stack.pop();
+                    if (stack.empty()) {
+                        stack.push(i);
+                    } else {
+                        maxans = Math.max(maxans, i - stack.peek());
+                    }
+                }
+            }
 
-			return maxans;
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            return maxans;
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }

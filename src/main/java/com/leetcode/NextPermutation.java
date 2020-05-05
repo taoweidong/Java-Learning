@@ -12,24 +12,42 @@
 
 package com.leetcode;
 
+import java.util.Arrays;
+
 /**
  * 下一个排列
+ *
  * @author Taoweidong
  */
 public class NextPermutation {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new NextPermutation().new Solution();
-	}
+        Solution solution = new NextPermutation().new Solution();
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public void nextPermutation(int[] nums) {
+        public void nextPermutation(int[] nums) {
 
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            for (int i = nums.length - 2; i >= 0; i--) {
+                if (nums[i] < nums[i + 1]) {
+                    int j = nums.length - 1;
+                    for (; j > i && nums[j] <= nums[i]; j--) {
+                        //找到下一个更大的排列而不是任意更大排列
+                    }
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                    Arrays.sort(nums, i + 1, nums.length);
+                    return;
+                }
+            }
+
+            Arrays.sort(nums);
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }

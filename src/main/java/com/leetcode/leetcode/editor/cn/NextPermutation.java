@@ -12,6 +12,10 @@
 
 package com.leetcode.leetcode.editor.cn;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.Arrays;
+
 /**
  * 下一个排列
  *
@@ -21,7 +25,12 @@ public class NextPermutation {
 
     public static void main(String[] args) {
 
+        int[] nums = {1, 2, 3};
+
         Solution solution = new NextPermutation().new Solution();
+        solution.nextPermutation(nums);
+
+        System.out.println(JSON.toJSONString(nums));
     }
 
     // leetcode submit region begin(Prohibit modification and deletion)
@@ -42,7 +51,22 @@ public class NextPermutation {
          * @param nums
          */
         public void nextPermutation(int[] nums) {
+            for (int i = nums.length - 2; i >= 0; i--) {
+                if (nums[i] < nums[i + 1]) {
+                    int j = nums.length - 1;
 
+                    //交換
+                    for (; j > i && nums[j] <= nums[i]; j--) {
+                        int temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                        Arrays.sort(nums, i + 1, nums.length);
+                        return;
+
+                    }
+                }
+            }
+            Arrays.sort(nums);
         }
     }
     // leetcode submit region end(Prohibit modification and deletion)
