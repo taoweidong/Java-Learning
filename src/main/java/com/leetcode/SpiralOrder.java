@@ -24,9 +24,14 @@ public class SpiralOrder {
         //行列
         int row = 0;
         int col = 0;
+        //设置上下左右的边界条件
+        //上
         int top = 0;
+        // 右
         int right = matrix[0].length - 1;
+        //下
         int bottom = matrix.length - 1;
+        //左
         int left = 0;
 
         List<Integer> res = new LinkedList<>();
