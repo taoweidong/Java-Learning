@@ -32,6 +32,7 @@ import java.util.Scanner;
 
 /**
  * 报文转义
+ * 参考题目：https://blog.csdn.net/qq_34648520/article/details/105328719
  * 0x07
  * 0x0D
  * 0x0A

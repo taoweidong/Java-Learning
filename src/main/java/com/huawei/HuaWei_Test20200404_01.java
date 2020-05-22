@@ -16,6 +16,8 @@ import java.util.TreeMap;
  * 假设输入为
  * [12,15),[16,17),[12,20),
  * 输出为[12,13)：2，[13,14)：2，[14,15)：2，[15,16)：1，[16,17)：1，[17,18)：1，[18,19)：1，[19,20)：1
+ * <p>
+ * 参考：https://blog.csdn.net/tszupup/article/details/81739630
  *
  * @author Taoweidong
  */

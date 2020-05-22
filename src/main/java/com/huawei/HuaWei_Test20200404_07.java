@@ -34,7 +34,7 @@ import java.time.temporal.WeekFields;
 import java.util.Scanner;
 
 /**
- * 日期函数
+ * 日期工具函数
  *
  * @author Taoweidong
  */
