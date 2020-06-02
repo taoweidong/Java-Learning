@@ -8,6 +8,7 @@ import java.util.Scanner;
  * 例如：
  * 1 1 3 1 1 1 1 1 1 1
  * 结果：2
+ * https://blog.csdn.net/weixin_39971186/article/details/103315477
  *
  * @author Taoweidong
  */
