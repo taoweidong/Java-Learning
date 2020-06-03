@@ -3,8 +3,7 @@ package com.huawei;
 import java.util.*;
 
 /**
- * 查找算式最小值：
- * 对于给定的10个整数，从中任意选出3个，代入算式X+XY-Y+Z,要求求出算式最小值
+ * 查找算式最小值：对于给定的10个整数，从中任意选出3个，代入算式X+XY-Y+Z,要求求出算式最小值
  * 例如：
  * 1 1 3 1 1 1 1 1 1 1
  * 结果：2
@@ -108,6 +107,7 @@ public class HuaWei_Test20200327_01_02 {
 
     /**
      * 在给定数组arr中获取count个数的所有排列组合
+     * 对标python中的itertools.combinations方法
      *
      * @param index 首个索引下标
      * @param count 每次取几个数

@@ -8,7 +8,6 @@ package com.offer;
 public class HuaWeiTest_01 {
     public static void main(String[] args) {
         int[][] arr = {{0, 1, 1, 1, 0}, {0, 1, 1, 1, 0}, {0, 1, 1, 1, 0}};
-
         System.out.println(getCount(arr, 1, 0));
 
     }
