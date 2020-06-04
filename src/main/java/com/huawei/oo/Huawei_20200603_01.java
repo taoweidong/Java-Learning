@@ -1,9 +1,6 @@
 package com.huawei.oo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * 第k个排列:给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
@@ -21,16 +18,63 @@ import java.util.PriorityQueue;
  * 输入: n = 3, k = 3
  * 输出: "213"
  * <p>
+ * <p>
+ * 容易理解，但是会超时的一种解法
  * https://leetcode-cn.com/problems/permutation-sequence/
  */
 public class Huawei_20200603_01 {
 
     public static void main(String[] args) {
-        System.out.println(getPermutation(3, 3));
+        //处理输入
+        Scanner in = new Scanner(System.in);
+        while (in.hasNext()) {
+            String[] arr = in.nextLine().trim().split(" ");
+            int n = Integer.valueOf(arr[0]);
+            int k = Integer.valueOf(arr[1]);
+
+            //进行逻辑处理
+            System.out.println(getPermutation(n, k));
+        }
+
 
     }
 
+    /**
+     * 获取指定数组元素的全排列结果
+     *
+     * @param num 待处理数组
+     * @return 全排列结果
+     */
+    private static ArrayList<ArrayList<Integer>> permute(int[] num) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        result.add(new ArrayList<Integer>());
 
+        for (int i = 0; i < num.length; i++) {
+            ArrayList<ArrayList<Integer>> current = new ArrayList<ArrayList<Integer>>();
+
+            for (ArrayList<Integer> l : result) {
+                for (int j = 0; j < l.size() + 1; j++) {
+                    l.add(j, num[i]);
+                    ArrayList<Integer> temp = new ArrayList<Integer>(l);
+                    current.add(temp);
+                    l.remove(j);
+                }
+            }
+            result = new ArrayList<ArrayList<Integer>>(current);
+        }
+
+        return result;
+    }
+
+
+    /**
+     * 第k个排列:给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
+     * 给定 n 和 k，返回第 k 个排列。
+     *
+     * @param n
+     * @param k
+     * @return
+     */
     public static String getPermutation(int n, int k) {
 
         int[] arr = new int[n];
@@ -39,68 +83,23 @@ public class Huawei_20200603_01 {
         }
 
         //进行组合
-        getPermutation(0, 3, arr);
-
-        String[] data = extractPermutationResult.toString().split("\\|");
+        ArrayList<ArrayList<Integer>> result = permute(arr);
 
         //进行降序排列
-        PriorityQueue<Integer> queue = new PriorityQueue<>((x, y) -> y - x);
-        for (String item : data) {
-            queue.add(Integer.valueOf(item.replace(",", "")));
+        List<Integer> queue = new ArrayList<>();
+        for (ArrayList item : result) {
+
+            StringBuffer temp = new StringBuffer(item.size());
+            item.forEach(x -> temp.append(x));
+
+            queue.add(Integer.valueOf(temp.toString()));
         }
+
+        Collections.sort(queue);
 
         //输出结果
-        for (int i = 0; i < k; i++) {
-            queue.poll();
-        }
-        return String.valueOf(queue.peek());
+        return String.valueOf(queue.get(k - 1));
     }
 
-    private static ArrayList<Integer> resultList = new ArrayList<>();
-    //所有的组合方式以|分割
-    private static StringBuffer extractPermutationResult = new StringBuffer();
-
-    /**
-     * 在给定数组arr中获取count个数的所有排列组合
-     * 对标python中的itertools.combinations方法
-     *
-     * @param index 首个索引下标
-     * @param count 每次取几个数
-     * @param arr   给定数组
-     * @return
-     */
-    public static void getPermutation(int index, int count, int[] arr) {
-        if (count > arr.length || arr.length <= 0) {
-            return;
-        }
-
-        if (arr.length == count) {
-            for (int i = index; i < arr.length; i++) {
-                extractPermutationResult.append(arr[i]).append(",");
-            }
-            return;
-        }
-
-        if (count == 1) {
-            for (int i = index; i < arr.length; i++) {
-                resultList.add(arr[i]);
-                for (Integer item : resultList) {
-                    extractPermutationResult.append(item).append(",");
-                }
-                extractPermutationResult.delete(extractPermutationResult.length() - 1, extractPermutationResult.length()).append("|");
-//                System.out.println(resultList);
-                resultList.remove((Object) arr[i]);
-            }
-        } else if (count > 1) {
-            for (int i = index; i < arr.length - count; i++) {
-                resultList.add(arr[i]);
-                //递归的方式在数组arr中找count-1个数的组合
-                getPermutation(i + 1, count - 1, arr);
-                resultList.remove((Object) arr[i]);
-            }
-        } else {
-            return;
-        }
-    }
 
 }
