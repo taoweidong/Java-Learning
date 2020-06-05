@@ -1,6 +1,9 @@
 package com.huawei.oo;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * 最大括号深度：
@@ -14,7 +17,7 @@ import java.util.*;
  * 一个只包含'('，')'，'{'，'}'，'[',']'字符串。
  * - 输出描述：
  * 一个整数，最大的括号深度
- * <p>
+ * <p>  ()(({[]})){[]}  -- 3
  * - 示例1：
  * 输入
  * []
@@ -34,41 +37,50 @@ public class Huawei_20200603_03 {
             //输入数据处理
             String str = sc.nextLine();
 
-            if ("".equals(str.trim())) {
+            //如果为空或者为奇数个，则为非法字符串
+            if ("".equals(str.trim()) || str.length() % 2 != 0) {
                 System.out.println(0);
                 return;
             }
-
-            //记录长度
-            Stack<Integer> stack = new Stack<>();
-            stack.push(-1);
 
             //记录字符
             Stack<Character> stackChar = new Stack<>();
 
             //最长有效括号子串的长度 ()(){}[]
+            int maxLength = 0;
             int count = 0;
             for (int i = 0; i < str.length(); i++) {
-
                 if ('(' == str.charAt(i) || '[' == str.charAt(i) || '{' == str.charAt(i)) {
-                    stack.add(i);
                     stackChar.add(str.charAt(i));
+                    maxLength = Math.max(maxLength, count);
+                    count = 0;
                 } else {
-                    if (!stackChar.isEmpty() && map.get(stackChar.peek()).equals(str.charAt(i))) {
-                        //出栈
-                        stack.pop();
-                        stackChar.pop();
-                        if (stack.isEmpty()) {
-                            stack.add(i);
-                            stackChar.add(str.charAt(i));
+                    if (!stackChar.isEmpty()) {
+                        if (map.get(stackChar.peek()).equals(str.charAt(i))) {
+                            //出栈
+                            stackChar.pop();
+                            count++;
+
                         } else {
-                            count = Math.max(count, i - stack.peek());
+                            System.out.println(0);
+                            return;
                         }
+                    } else {
+                        System.out.println(0);
+                        return;
                     }
 
                 }
             }
-            System.out.println(count);
+
+            //检查字符串是否有效
+            if (!stackChar.isEmpty()) {
+                System.out.println(0);
+                return;
+            }
+
+            maxLength = Math.max(maxLength, count);
+            System.out.println(maxLength);
 
         }
 

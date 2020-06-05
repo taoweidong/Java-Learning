@@ -38,8 +38,6 @@ public class Huawei_20200603_02 {
             //进行逻辑处理
             System.out.println(getPermutation(n, k));
         }
-
-
     }
 
     public static String getPermutation(int n, int k) {
