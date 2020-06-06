@@ -1,13 +1,11 @@
 package com.huawei.oo;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * # 【加密字符串】
+ * # 【加密字符串】 --不完整，待完善
  * > 有一串未加密的字符串str，通过对字符串的每一个字母改变实现加密，加密方式为在每个字母str[i]偏移特定数组元素a[i]的量，
  * 数组a前三位已经赋值，a0=1，a1=2,a2=4，当i>=3时，数组元素a[i]=ai-1  + ai-2  +ai-3 ，
  * 例如原文abcde加密后为bdgkr，其中偏移量分别是1,2,4,7,13。
@@ -25,7 +23,6 @@ import java.util.Scanner;
  */
 public class Huawei_20200605_03 {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
             //处理输入
@@ -35,6 +32,7 @@ public class Huawei_20200605_03 {
                 list.add(sc.nextLine().trim());
             }
 
+            List<String> result = new ArrayList<>();
             list.forEach(x -> {
                 //计算偏移量
                 int[] keyChars = new int[x.length()];
@@ -42,17 +40,37 @@ public class Huawei_20200605_03 {
                     keyChars[i] = getEnyKey(i);
                 }
                 //进行加密处理
-                
+                StringBuilder temp = new StringBuilder(x.length());
+                for (int i = 0; i < x.toCharArray().length; i++) {
+                    int tempChar = (int) (x.charAt(i) + keyChars[i]);
+                    if (tempChar < 122) {
+                        temp.append((char) tempChar);
+                    } else {
+                        tempChar = tempChar % 122;
+                        while (tempChar > 122) {
+                            tempChar = tempChar % 122;
+                        }
+                        temp.append((char) (tempChar + 96));
 
-                System.out.println(JSON.toJSONString(keyChars));
+                    }
+                }
 
-
+                result.add(temp.toString());
             });
 
+            result.forEach(x -> {
+                System.out.println(x);
+            });
 
         }
     }
 
+    /**
+     * 递归获取当前节点的偏移量
+     *
+     * @param i 节点号
+     * @return 偏移量
+     */
     private static int getEnyKey(int i) {
         //a0=1，a1=2,a2=4，当i>=3时，数组元素a[i]=ai-1  + ai-2  +ai-3 ，
         if (i == 0) {
