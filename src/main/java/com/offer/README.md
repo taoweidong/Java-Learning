@@ -1,3 +1,12 @@
+# 此目录功能
+> 用于针对技术面试相关算法题目的训练，主要针对技术面试时手撕代码或者算法面试的准备
+
+# 训练参考资料
+- [剑指offer] JAVA版题解（完整版）：https://blog.csdn.net/weiwei121451070/article/details/81742418
+- [剑指offer] Python版题解（完整版）：https://www.cnblogs.com/yanmk/p/9130681.html
+- 优质博客1： https://weiweiblog.cn/categories/%E7%AE%97%E6%B3%95-amp-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
+
+# 训练题目整理
 - 至多包含两个不同字符的最长子串的长度
 - 大数相乘(两个字符串相乘)
 - 大数相加(两个字符串相加)
