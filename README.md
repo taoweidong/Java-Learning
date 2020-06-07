@@ -7,16 +7,18 @@
 - 数字排列问题(Java语言版):https://blog.csdn.net/Jocelyn92/article/details/69808047?utm_source=blogxgwz3
 - 数字排列问题(Python语言版)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_01.py
 - 计算栈中的剩余数字(Python版)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_02.py
+- 英文反转问题(Java版)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_04.java
 
 
 # 2020年6月5日
 - 最大括号深度：优化非法条件
-- 求解连续数列：完善无解的处理
-- 服务器问题：完善[如果两台服务器位于同一行或者同一列]的情况
-- 最大N个数和最小N个数的和：完成
+- 求解连续数列：完善无解的处理(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_02.java
+- 服务器问题：完善[如果两台服务器位于同一行或者同一列]的情况(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_05.java
+- 最大N个数和最小N个数的和(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_02.java
 - 加密字符串:不完整，待完善(可能会超时)
-- 集五福问题：完成
-- 计算堆栈中的剩余数字：完成
+- 集五福问题(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_01.java
+- 计算堆栈中的剩余数字(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_02.java
+- 计算堆栈中的剩余数字(Python版本)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_02.py
 
 ## 2020年6月2日
 - 查找算式最小值正确解法：字符串的递归排序 HuaWei_Test20200327_01_02
