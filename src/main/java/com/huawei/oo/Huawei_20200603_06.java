@@ -20,6 +20,11 @@ import java.util.Scanner;
  * 输入
  * 2 2
  * 1 0
+ * 0 0
+ * 输出：0
+ * 输入
+ * 2 2
+ * 1 0
  * 1 1
  * 输出：3
  * <p>
@@ -62,7 +67,7 @@ public class Huawei_20200603_06 {
 
         }
 
-//        int[][] grid = {{1, 0}, {1, 1}};
+//        int[][] grid = {{1, 0}, {0, 0}};
 //        int[][] grid = {{1, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}};
 //        int[][] grid = {{1, 1, 0, 1, 0}, {1, 0, 0, 1, 0}, {0, 0, 0, 0, 0}, {1, 0, 0, 1, 1}};
 //        int count = maxAreaOfIsland(grid);
@@ -76,7 +81,10 @@ public class Huawei_20200603_06 {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length; j++) {
                 if (grid[i][j] == 1) {
-                    res = Math.max(res, dfs(grid, i, j));
+                    int value = dfs(grid, i, j);
+                    if (value > 1) {
+                        res = Math.max(res, dfs(grid, i, j));
+                    }
                 }
             }
         }
