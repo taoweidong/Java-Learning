@@ -1,8 +1,9 @@
 package com.huawei.oo;
 
-import com.alibaba.fastjson.JSON;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * # 【计算堆栈中的剩余数字】--未完成

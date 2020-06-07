@@ -2,6 +2,13 @@
 > Java学习项目，学习Java相关知识点，记录一些重要算法问题的代码实现。
 > 注意：com.nowcoder包下是所有算法实现的代码，以下记录的算法代码实现均在此包下，其他作为日常学习使用
 
+# 2020年6月7日
+- 数字排列问题(C语言版)：https://blog.csdn.net/nameofcsdn/article/details/70307098
+- 数字排列问题(Java语言版):https://blog.csdn.net/Jocelyn92/article/details/69808047?utm_source=blogxgwz3
+- 数字排列问题(Python语言版)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_01.py
+- 计算栈中的剩余数字(Python版)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_02.py
+
+
 # 2020年6月5日
 - 最大括号深度：优化非法条件
 - 求解连续数列：完善无解的处理
