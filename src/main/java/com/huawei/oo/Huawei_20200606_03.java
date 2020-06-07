@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 5 6
  * 输出：3
  */
-class Interval implements Comparable<Interval> {
+class Interval {
     Integer start = 0;
     Integer end = 0;
 
@@ -32,22 +32,6 @@ class Interval implements Comparable<Interval> {
         this.end = end;
     }
 
-    @Override
-    public String toString() {
-        return "Interval{" +
-                "start=" + start +
-                ", end=" + end +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Interval o) {
-        // 只能对一个字段做比较，如果做整个对象的比较就实现不了按指定字段排序了。
-        if (this.start != o.start) {
-            return this.start.compareTo(o.start);
-        }
-        return this.end.compareTo(o.end);
-    }
 }
 
 public class Huawei_20200606_03 {
@@ -55,16 +39,21 @@ public class Huawei_20200606_03 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        //面试官的最多面试人次m
+        int m = in.nextInt();
+        //当天总的面试场次n
         int n = in.nextInt();
+        //所有的面试场次信息
         Interval[] intervals = new Interval[n];
         for (int i = 0; i < n; i++) {
             intervals[i] = new Interval(in.nextInt(), in.nextInt());
         }
-        int size = minMeetingRooms(intervals);
+
+        int size = minMeetingRooms(intervals, m);
         System.out.println(size);
     }
 
-    public static int minMeetingRooms(Interval[] intervals) {
+    public static int minMeetingRooms(Interval[] intervals, int m) {
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
@@ -74,12 +63,14 @@ public class Huawei_20200606_03 {
         PriorityQueue<Interval> heap = new PriorityQueue<Interval>((o1, o2) -> (o1.end - o2.end));
         heap.offer(intervals[0]);
 
-        // 逐个添加面试官,如果你的开始时间>已有会议的面试官结束时间，就不用开辟会议室了
-        // 否则需要新开一个
+        // 逐个添加面试官,如果你的开始时间>已有面试的结束时间，就不用分配面试官
+        // 否则一个面试官
+        int count = 0;
         for (int i = 1; i < intervals.length; i++) {
             Interval tmp = heap.poll();
-            if (tmp.end <= intervals[i].start) {
+            if (tmp.end <= intervals[i].start && count < m) {
                 tmp.end = intervals[i].end;
+                ++count;
             } else {
                 heap.offer(intervals[i]);
             }
@@ -88,7 +79,6 @@ public class Huawei_20200606_03 {
 
         return heap.size();
     }
-
 
 }
 
