@@ -15,7 +15,7 @@
 - 求解连续数列：完善无解的处理(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_02.java
 - 服务器问题：完善[如果两台服务器位于同一行或者同一列]的情况(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_05.java
 - 最大N个数和最小N个数的和(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_02.java
-- 加密字符串:不完整，待完善(Java版本-可能会超时)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_03.java
+- 加密字符串:已完成(Java版本-可能会超时)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_03.java
 - 集五福问题(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_01.java
 - 计算堆栈中的剩余数字(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_02.java
 - 计算堆栈中的剩余数字(Python版本)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_02.py

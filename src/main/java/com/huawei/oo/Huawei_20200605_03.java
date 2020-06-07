@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * # 【加密字符串】 --不完整，待完善
+ * # 【加密字符串】 --已完成，但是有可能超时
  * > 有一串未加密的字符串str，通过对字符串的每一个字母改变实现加密，加密方式为在每个字母str[i]偏移特定数组元素a[i]的量，
  * 数组a前三位已经赋值，a0=1，a1=2,a2=4，当i>=3时，数组元素a[i]=ai-1  + ai-2  +ai-3 ，
  * 例如原文abcde加密后为bdgkr，其中偏移量分别是1,2,4,7,13。
@@ -42,19 +42,14 @@ public class Huawei_20200605_03 {
                 //进行加密处理
                 StringBuilder temp = new StringBuilder(x.length());
                 for (int i = 0; i < x.toCharArray().length; i++) {
-                    int tempChar = (int) (x.charAt(i) + keyChars[i]);
-                    if (tempChar < 122) {
-                        temp.append((char) tempChar);
-                    } else {
-                        tempChar = tempChar % 122;
-                        while (tempChar > 122) {
-                            tempChar = tempChar % 122;
-                        }
-                        temp.append((char) (tempChar + 96));
-
+                    int tempChar = (int) x.charAt(i) + keyChars[i] % 26;
+                    if (tempChar > 122) {
+                        tempChar -= 26;
                     }
+                    temp.append((char) tempChar);
                 }
 
+                //收集当前字符串的加密结果
                 result.add(temp.toString());
             });
 
