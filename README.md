@@ -3,6 +3,7 @@
 > 注意：com.nowcoder包下是所有算法实现的代码，以下记录的算法代码实现均在此包下，其他作为日常学习使用
 
 # 2020年6月7日
+- 招聘问题:已完成：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_04.java
 - 数字排列问题(C语言版)：https://blog.csdn.net/nameofcsdn/article/details/70307098
 - 数字排列问题(Java语言版):https://blog.csdn.net/Jocelyn92/article/details/69808047?utm_source=blogxgwz3
 - 数字排列问题(Python语言版)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_01.py

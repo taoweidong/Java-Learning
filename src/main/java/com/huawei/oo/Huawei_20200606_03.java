@@ -23,13 +23,30 @@ import java.util.Scanner;
  * 5 6
  * 输出：3
  */
-class Interval {
-    int start = 0;
-    int end = 0;
+class Interval implements Comparable<Interval> {
+    Integer start = 0;
+    Integer end = 0;
 
-    public Interval(int start, int end) {
+    public Interval(Integer start, Integer end) {
         this.start = start;
         this.end = end;
+    }
+
+    @Override
+    public String toString() {
+        return "Interval{" +
+                "start=" + start +
+                ", end=" + end +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Interval o) {
+        // 只能对一个字段做比较，如果做整个对象的比较就实现不了按指定字段排序了。
+        if (this.start != o.start) {
+            return this.start.compareTo(o.start);
+        }
+        return this.end.compareTo(o.end);
     }
 }
 
