@@ -79,6 +79,20 @@ import java.util.Scanner;
  * 4 5
  * 5 6
  * 输出：6
+ * <p>
+ * 输入：
+ * 3
+ * 9
+ * 1 10
+ * 2 7
+ * 8 12
+ * 3 19
+ * 10 20
+ * 11 30
+ * 29 35
+ * 36 40
+ * 37 38
+ * 输出：4
  */
 
 class IntervalNew implements Comparable<IntervalNew> {
@@ -121,12 +135,12 @@ public class Huawei_20200606_04 {
         if (intervals == null || intervals.length == 0) {
             return 0;
         }
-        // 按照开始时间排序:递增排序
+
         List<IntervalNew> heap = new ArrayList<>();
         for (IntervalNew interval : intervals) {
             heap.add(interval);
         }
-        //自定义排序
+        // 按照开始时间排序:递增排序
         Collections.sort(heap);
 
         int minMeeter = 0;
@@ -135,12 +149,16 @@ public class Huawei_20200606_04 {
             IntervalNew first = heap.remove(0);
             int index = m - 1;
             //遍历剩余的场次，找到m-1场的场次，条件为：前一场的场次end时间小于等于尝试检查的场次的start时间
-            for (int i = heap.size() - 1; i >= 0; i--) {
+            //此处必须使用正序删除
+            for (int i = 0; i < heap.size(); i++) {
                 if (index > 0) {
                     if (first.end <= heap.get(i).start) {
                         //在面试场次里面找满足条件的，找到一个就从面试总场次中删除
-                        heap.remove(i);
+                        // 更新上次面试的场次信息
+                        first = heap.remove(i);
                         index--;
+                        //list正序删除时，会漏掉元素，需要重新调整索引
+                        i--;
                         continue;
                     }
                 } else {
