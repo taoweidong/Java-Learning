@@ -6,6 +6,7 @@
 - [剑指offer] Python版题解(完整版)：https://www.cnblogs.com/yanmk/p/9130681.html
 - [剑指offer] C版题解(完整版)：https://gitee.com/taowd/C-language
 - 优质博客1： https://weiweiblog.cn/categories/%E7%AE%97%E6%B3%95-amp-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
+- 精选算法Python实现：https://blog.csdn.net/u013205877/article/details/76411718
 
 # 训练题目整理
 - 至多包含两个不同字符的最长子串的长度
