@@ -1,10 +1,11 @@
 package com.huawei.oo;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.*;
 
-public class Hello {
+/**
+ * 坐标轴求面积问题：此代码非正确答案，待调试
+ */
+public class Huawei_20200610_01 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
