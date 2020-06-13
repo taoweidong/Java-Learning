@@ -2,6 +2,20 @@
 > Java学习项目，学习Java相关知识点，记录一些重要算法问题的代码实现。
 > 注意：com.nowcoder包下是所有算法实现的代码，以下记录的算法代码实现均在此包下，其他作为日常学习使用
 
+# 2020年6月13日
+- 德州扑克：https://blog.csdn.net/nameofcsdn/article/details/70339592
+- 服务器广播：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 九宫格输入问题：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 判断一组数连续：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 航班预定统计：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 分子弹/分发糖果：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 双列表元素分配:https://blog.csdn.net/qq_36209248/article/details/104852005
+- 打印任务排序:https://blog.csdn.net/qq_36209248/article/details/104852005
+- 单词压缩编码:https://blog.csdn.net/qq_36209248/article/details/104852005
+- 报数游戏(约瑟夫环问题):https://blog.csdn.net/qq_36209248/article/details/104852005
+- 抢票系统：https://blog.csdn.net/qq_36209248/article/details/104852005
+- 将-相连的字符串按照给定数字，按照规则生成一个新的字符串，并输出
+
 # 2020年6月7日
 - 招聘问题:已完成：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_04.java
 - 数字排列问题(C语言版)：https://blog.csdn.net/nameofcsdn/article/details/70307098
@@ -18,6 +32,7 @@
 - 最大N个数和最小N个数的和(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_02.java
 - 加密字符串:已完成(Java版本-可能会超时)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200605_03.java
 - 集五福问题(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_01.java
+    - https://blog.csdn.net/qq_36209248/article/details/104852005
 - 计算堆栈中的剩余数字(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200606_02.java
 - 计算堆栈中的剩余数字(Python版本)：https://gitee.com/taowd/learn-python3/blob/master/huawei/20200607_02.py
 

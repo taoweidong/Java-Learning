@@ -8,7 +8,7 @@
 - 英文反转问题(Java版)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_04.java
 
 
-# 2020年6月5日
+# 2020年6月6日
 - 最大括号深度：优化非法条件
 - 求解连续数列：完善无解的处理(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_02.java
 - 服务器问题：完成(Java版本)：https://gitee.com/taowd/Java-Learning/blob/master/src/main/java/com/huawei/oo/Huawei_20200603_06.java
