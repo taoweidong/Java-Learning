@@ -1,12 +1,21 @@
 package com.offer;
 
-import com.alibaba.fastjson.JSON;
-
 /**
- * 问题描述：四则运算表达式求值
+ * 问题描述：链表操作
  *
  * @author Taoweidong
  */
+
+
+class Node {
+    int v;
+    Node next;
+
+    public Node(int v) {
+        this.v = v;
+    }
+}
+
 public class HuaWeiTest_05 {
     public static void main(String[] args) {
         Node node1 = new Node(1);
@@ -128,11 +137,3 @@ public class HuaWeiTest_05 {
 
 }
 
-class Node {
-    int v;
-    Node next;
-
-    public Node(int v) {
-        this.v = v;
-    }
-}
