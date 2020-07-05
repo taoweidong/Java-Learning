@@ -3,7 +3,6 @@ package com.leetcode;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * 最小覆盖子串:https://leetcode-cn.com/problems/minimum-window-substring/
@@ -27,8 +26,8 @@ import java.util.Objects;
 public class MinimumWindowSubstring {
 
     public static void main(String[] args) {
-
         System.out.println(new MinimumWindowSubstring().minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println(new MinimumWindowSubstring().minWindow("ADOBECODEBANC", "ABCC"));
         System.out.println(new MinimumWindowSubstring().minWindow("a", "aa"));
         System.out.println(new MinimumWindowSubstring().minWindow("a", "b"));
         System.out.println(new MinimumWindowSubstring().minWindow("aa", "aa"));
@@ -62,19 +61,22 @@ public class MinimumWindowSubstring {
             char s1 = s.charAt(right);
             windows.put(s1, windows.getOrDefault(s1, 0) + 1);
             if (needs.containsKey(s1)) {
+                //注意点1：
                 if (needs.get(s1) > 0 && windows.get(s1) <= needs.get(s1)) {
                     //字符s1出现次数已经满足条件
                     match++;
                 }
             }
             //windows中的字符串已经符合needs的要求了
+            //判断左侧窗口是否要收缩
             while (t.length() == match) {
-                // 更新结果
+                // 在这里更新最小覆盖子串
                 if (right - left + 1 < minLength) {
                     start = left;
                     minLength = right - left + 1;
                 }
 
+                //窗口内数据更新
                 char l1 = s.charAt(left);
                 if (needs.containsKey(l1)) {
                     if (needs.get(l1) > 0 && windows.get(l1) <= needs.get(l1)) {
