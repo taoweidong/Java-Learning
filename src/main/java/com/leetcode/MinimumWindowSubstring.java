@@ -35,6 +35,7 @@ public class MinimumWindowSubstring {
     }
 
     public String minWindow(String s, String t) {
+        //考虑异常情形
         if (s == null || s.length() == 0 || t == null || t.length() == 0 || s.length() < t.length()) {
             return "";
         }
