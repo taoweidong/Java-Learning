@@ -4,6 +4,8 @@ import java.util.Stack;
 
 /**
  * 962. 最大宽度坡:https://leetcode-cn.com/problems/maximum-width-ramp/
+ *
+ * @author Taoweidong
  */
 public class HelloWorld_962 {
     public static void main(String[] args) {
@@ -12,6 +14,12 @@ public class HelloWorld_962 {
 
     }
 
+    /**
+     * 求最大坡宽度
+     *
+     * @param A 坡信息
+     * @return 最大坡宽度
+     */
     public int maxWidthRamp(int[] A) {
 
         Stack<Integer> stack = new Stack<>();
