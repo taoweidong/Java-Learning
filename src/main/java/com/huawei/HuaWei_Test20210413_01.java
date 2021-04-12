@@ -26,10 +26,8 @@
 
 package com.huawei;
 
-import java.util.Stack;
-
 /**
- * 556. 下一个更大元素 III
+ * 并查集：https://leetcode-cn.com/problems/number-of-provinces/
  *
  * @author Taoweidong
  */
