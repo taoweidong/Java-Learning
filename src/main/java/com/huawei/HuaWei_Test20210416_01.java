@@ -61,6 +61,50 @@ public class HuaWei_Test20210416_01 {
     // 如果左右节点相同时，满足条件，返回True
     return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
   }
+
+  void plusOne(TreeNode root) {
+    if (root == null) {
+      return;
+    }
+    // 节点值增加1
+    root.val += 1;
+
+    plusOne(root.left);
+    plusOne(root.right);
+  }
+
+  public boolean isValidBST(TreeNode root) {
+    return isValidBST(root, null, null);
+  }
+
+  boolean isValidBST(TreeNode root, TreeNode min, TreeNode max) {
+    if (root == null) {
+      return true;
+    }
+    if (min != null && root.val <= min.val) {
+      return false;
+    }
+    if (max != null && root.val >= max.val) {
+      return false;
+    }
+    return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
+  }
+
+  public TreeNode searchBST(TreeNode root, int val) {
+    if (root == null) {
+      return null;
+    }
+    if (root.val == val) {
+      return root;
+    }
+    if (root.val > val) {
+      return searchBST(root.left, val);
+    } else if (root.val < val) {
+      return searchBST(root.right, val);
+    } else {
+      return root;
+    }
+  }
 }
 
 class TreeNode {
