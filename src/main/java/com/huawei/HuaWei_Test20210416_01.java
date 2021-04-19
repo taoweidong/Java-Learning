@@ -139,6 +139,28 @@ public class HuaWei_Test20210416_01 {
     }
     return node;
   }
+
+  /**
+   * 插入二叉树中满足条件的节点信息
+   *
+   * @param root 二叉树
+   * @param val 节点信息
+   * @return
+   */
+  public TreeNode insertIntoBST(TreeNode root, int val) {
+
+    if (root == null) {
+      return new TreeNode(val);
+    }
+
+    if (root.val > val) {
+      root.left = insertIntoBST(root.left, val);
+    }
+    if (root.val < val) {
+      root.right = insertIntoBST(root.right, val);
+    }
+    return root;
+  }
 }
 
 class TreeNode {
