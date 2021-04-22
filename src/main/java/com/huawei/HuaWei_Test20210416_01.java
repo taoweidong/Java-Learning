@@ -26,6 +26,8 @@
 
 package com.huawei;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -160,6 +162,33 @@ public class HuaWei_Test20210416_01 {
       root.right = insertIntoBST(root.right, val);
     }
     return root;
+  }
+
+  public List<Integer> preorderTraversal(TreeNode root) {
+    List<Integer> res = new ArrayList<>();
+    preOrder(root, res);
+    return res;
+  }
+
+  public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> res = new ArrayList<>();
+    preOrder(root, res);
+    return res;
+  }
+
+  public List<Integer> postorderTraversal(TreeNode root) {
+    List<Integer> res = new ArrayList<>();
+    preOrder(root, res);
+    return res;
+  }
+
+  public void preOrder(TreeNode root, List<Integer> res) {
+    if (root == null) {
+      return;
+    }
+    preOrder(root.left, res);
+    preOrder(root.right, res);
+    res.add(root.val);
   }
 }
 
