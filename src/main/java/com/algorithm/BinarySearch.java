@@ -3,7 +3,8 @@ package com.algorithm;
 public class BinarySearch {
   public static void main(String[] args) {
     int[] number = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int target = 4;
+    //    int[] number = {1, 2, 2, 2, 3};
+    int target = 2;
     System.out.println(binarySearch(number, target));
   }
 
@@ -14,6 +15,7 @@ public class BinarySearch {
     while (left <= right) {
       // 注意：使用下面这种方式可以解决溢出的问题
       int mid = left + (right - left) / 2;
+      System.out.println(mid);
       if (number[mid] == target) {
         return mid;
       } else if (number[mid] < target) {
