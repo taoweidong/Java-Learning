@@ -19,7 +19,7 @@
 // 
 // Related Topics 堆 哈希表
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 import java.util.*;
 

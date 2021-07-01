@@ -19,7 +19,7 @@
 // 
 // Related Topics 贪心算法 数组
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 跳跃游戏

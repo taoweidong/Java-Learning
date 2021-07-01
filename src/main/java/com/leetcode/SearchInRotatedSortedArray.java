@@ -20,7 +20,7 @@
 //输出: -1 
 // Related Topics 数组 二分查找
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 import java.io.BufferedReader;
 import java.io.IOException;

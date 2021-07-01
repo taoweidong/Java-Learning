@@ -23,7 +23,7 @@
 // 
 // Related Topics 哈希表 双指针 字符串 Sliding Window
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;

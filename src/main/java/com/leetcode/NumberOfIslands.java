@@ -24,7 +24,7 @@
 // 
 // Related Topics 深度优先搜索 广度优先搜索 并查集
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 岛屿数量

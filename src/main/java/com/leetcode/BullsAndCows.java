@@ -24,7 +24,7 @@
 // 说明: 你可以假设秘密数字和朋友的猜测数都只包含数字，并且它们的长度永远相等。 
 // Related Topics 哈希表
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 import java.util.*;
 

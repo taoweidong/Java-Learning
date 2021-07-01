@@ -35,7 +35,7 @@
 // Related Topics 字符串
 
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 仅仅反转字母

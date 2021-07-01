@@ -14,7 +14,7 @@
 // 
 // Related Topics 字符串 动态规划
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 最长回文子串

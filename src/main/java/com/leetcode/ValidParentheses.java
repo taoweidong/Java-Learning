@@ -39,7 +39,7 @@
 //输出: true 
 // Related Topics 栈 字符串
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;

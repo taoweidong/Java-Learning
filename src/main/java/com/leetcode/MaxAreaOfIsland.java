@@ -32,7 +32,7 @@
 // 注意: 给定的矩阵grid 的长度和宽度都不超过 50。 
 // Related Topics 深度优先搜索 数组
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 岛屿的最大面积

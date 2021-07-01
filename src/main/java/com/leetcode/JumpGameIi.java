@@ -17,7 +17,7 @@
 // 假设你总是可以到达数组的最后一个位置。 
 // Related Topics 贪心算法 数组
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 跳跃游戏 II

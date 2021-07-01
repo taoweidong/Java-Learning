@@ -53,7 +53,7 @@
 //
 // Related Topics 数学 字符串
 
-package com.leetcode.leetcode.editor.cn;
+package com.leetcode;
 
 /**
  * 字符串转换整数 (atoi)
