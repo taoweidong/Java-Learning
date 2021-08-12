@@ -7,24 +7,23 @@ import java.util.Deque;
 /**
  * 239. 滑动窗口最大值: https://leetcode-cn.com/problems/sliding-window-maximum/
  */
-public class HelloWorld_239 {
+public class LeetCode_239_MaxSlidingWindow {
     public static void main(String[] args) {
         int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
 
-        int[] out = new HelloWorld_239().maxSlidingWindow(nums, k);
+        int[] out = new LeetCode_239_MaxSlidingWindow().maxSlidingWindow(nums, k);
         System.out.println(Arrays.toString(out));
 
-//        Deque<Integer> deq = new ArrayDeque<>();
-//        deq.addFirst(10);
-//        deq.addLast(5);
-//        deq.addLast(9);
-//
-//        System.out.println(deq.getFirst());
-//
-//        deq.removeFirst();
-//        System.out.println(deq.getFirst());
-
+        // Deque<Integer> deq = new ArrayDeque<>();
+        // deq.addFirst(10);
+        // deq.addLast(5);
+        // deq.addLast(9);
+        //
+        // System.out.println(deq.getFirst());
+        //
+        // deq.removeFirst();
+        // System.out.println(deq.getFirst());
 
     }
 
@@ -51,16 +50,14 @@ public class HelloWorld_239 {
             result[i] = max;
         }
 
-
         return result;
     }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
 
-
         int n = nums.length;
-        //处理一些特殊情形
+        // 处理一些特殊情形
         if (n * k == 0) {
             return new int[0];
         }
@@ -68,24 +65,24 @@ public class HelloWorld_239 {
             return nums;
         }
 
-        //建立双端队列
+        // 建立双端队列
         Deque<Integer> deq = new ArrayDeque<>();
-        //窗口的左边界
+        // 窗口的左边界
         int left;
         int index = 0;
-        //初始出
+        // 初始出
         for (int i = 0; i < nums.length; i++) {
-            //窗口的左边界
+            // 窗口的左边界
             left = i - k + 1;
-            //队列为空时，直接添加进去
+            // 队列为空时，直接添加进去
             if (deq.isEmpty()) {
                 deq.add(i);
             } else if (left > deq.peekFirst()) {
-                //如果左边值已经不在窗口内，则直接删除
+                // 如果左边值已经不在窗口内，则直接删除
                 deq.pollFirst();
             }
 
-            //从队尾开始，把比他小的值丢掉，从队尾开始把小数压缩
+            // 从队尾开始，把比他小的值丢掉，从队尾开始把小数压缩
             while (!deq.isEmpty() && nums[deq.peekLast()] <= nums[i]) {
                 deq.pollLast();
             }

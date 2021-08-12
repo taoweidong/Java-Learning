@@ -7,28 +7,31 @@ import java.util.Stack;
  *
  * @author Taoweidong
  */
-public class HelloWorld_962 {
+public class LeetCode_962_MaxWidthRamp {
     public static void main(String[] args) {
         int[] input = {6, 0, 8, 2, 1, 5};
-        System.out.println(new HelloWorld_962().maxWidthRamp(input));
+        System.out.println(new LeetCode_962_MaxWidthRamp().maxWidthRamp(input));
 
     }
 
     /**
      * 求最大坡宽度
      *
-     * @param A 坡信息
+     * @param A
+     *            坡信息
      * @return 最大坡宽度
      */
     public int maxWidthRamp(int[] A) {
 
         Stack<Integer> stack = new Stack<>();
-        //排序
+        // 排序
         for (int i = 0; i < A.length; i++) {
             if (stack.isEmpty() || A[stack.peek()] >= A[i]) {
                 stack.add(i);
             }
         }
+
+        System.out.println(stack);
 
         int maxLength = Integer.MIN_VALUE;
         for (int i = A.length - 1; i >= 0; i--) {
