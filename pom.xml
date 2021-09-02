@@ -7,7 +7,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>java learning</name>
     <description>java学习</description>
-
     <dependencies>
         <!--单元测试依赖 -->
         <dependency>
@@ -67,4 +66,6 @@
 
 
     </dependencies>
+
+
 </project>
