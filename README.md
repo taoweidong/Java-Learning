@@ -1,3 +1,6 @@
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=taoweidong)](https://github.com/taoweidong/Java-Learning)
+
+
 # Java-Learning
 > Java学习项目，学习Java相关知识点，记录一些重要算法问题的代码实现。
 > 注意：com.nowcoder包下是所有算法实现的代码，以下记录的算法代码实现均在此包下，其他作为日常学习使用
