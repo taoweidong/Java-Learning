@@ -59,6 +59,7 @@ public class AddTwoNumbers {
         int carry = 0;
         while (p != null || q != null) {
             int x = (p != null) ? p.val : 0;
+
             int y = (q != null) ? q.val : 0;
             int sum = x + y + carry;
             // 取整
