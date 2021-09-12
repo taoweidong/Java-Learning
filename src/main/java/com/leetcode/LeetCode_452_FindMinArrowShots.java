@@ -8,7 +8,9 @@ import java.util.Comparator;
  */
 public class LeetCode_452_FindMinArrowShots {
     public static void main(String[] args) {
-
+        // int[][] points = {{10, 16}, {2, 8}, {1, 6}, {7, 12}};
+        int[][] points = {{5, 12}, {1, 4}, {3, 9}};
+        System.out.println(new LeetCode_452_FindMinArrowShots().findMinArrowShots(points));
     }
 
     public int findMinArrowShots(int[][] points) {
@@ -22,10 +24,10 @@ public class LeetCode_452_FindMinArrowShots {
         int count = 1;
         for (int i = 1; i < points.length; i++) {
             if (points[i][0] > points[i - 1][1]) {
-                // 说明是重叠的，可以射中
+                // 区间不重叠，新增射箭数量，说明是重叠的，可以射中
                 count++;
             } else {
-                // 设置右边区间
+                // 合并区间，设置右边区间
                 points[i][1] = Math.min(points[i][1], points[i - 1][1]);
             }
         }
