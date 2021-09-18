@@ -12,11 +12,11 @@ import java.util.TreeMap;
 public class HashMapCountChar {
 
     public static void main(String[] args) {
-        //定义字符串
+        // 定义字符串
         String strTemp = "abdkbcaajjj99*^*LLLLLLLa";
-        //定义集合:按照ASCII码进行默认排序
+        // 定义集合:按照ASCII码进行默认排序
         Map<Character, Integer> map = new TreeMap<Character, Integer>();
-        //开始处理
+        // 开始处理
         char[] chTemp = strTemp.toCharArray();
 
         Character item;
@@ -25,7 +25,7 @@ public class HashMapCountChar {
             map.put(item, map.getOrDefault(item, 0) + 1);
         }
 
-        //遍历集合
+        // 遍历集合
         for (Map.Entry<Character, Integer> me : map.entrySet()) {
             System.out.println(me.getKey() + "--" + me.getValue());
         }

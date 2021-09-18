@@ -40,7 +40,7 @@ public class MirrorTree {
 
         TreeNode temp = null;
         if (root != null) {
-            //交换当前节点的左右子树
+            // 交换当前节点的左右子树
             temp = root.left;
             root.left = root.right;
             root.right = temp;
@@ -51,7 +51,6 @@ public class MirrorTree {
                 mirror(root.right);
             }
         }
-
 
     }
 }

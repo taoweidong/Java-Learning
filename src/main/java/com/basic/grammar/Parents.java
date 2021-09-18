@@ -2,36 +2,37 @@ package com.basic.grammar;
 
 /**
  * 父类的功能
+ * 
  * @author taowd
  * @version 2019年5月15日
  * @see Parents
  */
 public class Parents {
 
-	private String name;
+    private String name;
 
-	private Integer age;
+    private Integer age;
 
-	public String getName() {
+    public String getName() {
 
-		return name;
-	}
+        return name;
+    }
 
-	public void setName(String name) {
+    public void setName(String name) {
 
-		this.name = name;
-	}
+        this.name = name;
+    }
 
-	public Integer getAge() {
+    public Integer getAge() {
 
-		return age;
-	}
+        return age;
+    }
 
-	public void setAge(Integer age) {
+    public void setAge(Integer age) {
 
-		this.age = age;
-	}
+        this.age = age;
+    }
 
-	public String birthday;
+    public String birthday;
 
 }

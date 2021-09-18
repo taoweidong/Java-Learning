@@ -7,15 +7,15 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ConcurrentHashMapDemo {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// 采用锁分段机制 替代 Hashtable的独占锁，进而提高性能
-		ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<>();
-		concurrentHashMap.put("zhangsan", "张三");
+        // 采用锁分段机制 替代 Hashtable的独占锁，进而提高性能
+        ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<>();
+        concurrentHashMap.put("zhangsan", "张三");
 
-		concurrentHashMap.forEach((key, value) -> {
-			System.out.println(key + "------>" + value);
-		});
+        concurrentHashMap.forEach((key, value) -> {
+            System.out.println(key + "------>" + value);
+        });
 
-	}
+    }
 }

@@ -12,13 +12,13 @@ import java.util.Collections;
 public class PokerDemo {
 
     public static void main(String[] args) {
-        //创建牌盒
+        // 创建牌盒
         ArrayList<String> array = new ArrayList<String>();
 
         String[] colors = {"♥", "♠", "♣", "♦"};
         String[] numbers = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
-        //装牌
+        // 装牌
         for (String color : colors) {
             for (String number : numbers) {
                 array.add(color.concat(number));
@@ -26,12 +26,12 @@ public class PokerDemo {
         }
         array.add("大王");
         array.add("小王");
-        //洗牌
+        // 洗牌
         Collections.shuffle(array);
 
         System.out.println(array);
 
-        //发牌
+        // 发牌
         ArrayList<String> zhangSan = new ArrayList<String>();
         ArrayList<String> liSi = new ArrayList<String>();
         ArrayList<String> wagWu = new ArrayList<String>();
@@ -49,7 +49,7 @@ public class PokerDemo {
             }
         }
 
-        //看牌
+        // 看牌
         System.out.println("zhangSan:" + zhangSan);
         System.out.println("    liSi:" + liSi);
         System.out.println("   wagWu:" + wagWu);

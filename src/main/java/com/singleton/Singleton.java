@@ -9,12 +9,13 @@ public class Singleton {
     /**
      * 私有化构造函数
      */
-    private Singleton() {
-    }
+    private Singleton() {}
+
     /**
      * 类加载时即创建对象
      */
     private static Singleton singleton = new Singleton();
+
     /**
      * 提供给外部使用
      *

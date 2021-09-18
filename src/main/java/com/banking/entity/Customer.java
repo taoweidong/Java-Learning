@@ -5,55 +5,56 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ÓÃ»§ÊµÌå£¬Ò»¸öÓÃ»§¶ÔÓ¦¶à¸öÕËºÅ
+ * ï¿½Ã»ï¿½Êµï¿½å£¬Ò»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ëºï¿½
+ * 
  * @author taowd
- * @version 2019Äê5ÔÂ12ÈÕ
+ * @version 2019ï¿½ï¿½5ï¿½ï¿½12ï¿½ï¿½
  * @see Customer
  */
 public class Customer {
 
-	private String firstName;
+    private String firstName;
 
-	private String lastName;
+    private String lastName;
 
-	// ±íÊ¾Óµ»¤¿ÉÒÔÓÐ¶à¸öÕË»§
-	private List<Account> accounts;
+    // ï¿½ï¿½Ê¾Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½Ë»ï¿½
+    private List<Account> accounts;
 
-	public Customer(String firstName, String lastName) {
+    public Customer(String firstName, String lastName) {
 
-		this.firstName = firstName;
-		this.lastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
 
-		accounts = new ArrayList<Account>();
-	}
+        accounts = new ArrayList<Account>();
+    }
 
-	public Account getAccount(int index) {
+    public Account getAccount(int index) {
 
-		return accounts.get(index);
-	}
+        return accounts.get(index);
+    }
 
-	public void addAccount(Account account) {
+    public void addAccount(Account account) {
 
-		accounts.add(account);
-	}
+        accounts.add(account);
+    }
 
-	public String getFirstName() {
+    public String getFirstName() {
 
-		return firstName;
-	}
+        return firstName;
+    }
 
-	public String getLastName() {
+    public String getLastName() {
 
-		return lastName;
-	}
+        return lastName;
+    }
 
-	public int getNumOfAccounts() {
+    public int getNumOfAccounts() {
 
-		return accounts.size();
-	}
+        return accounts.size();
+    }
 
-	public Iterator<Account> getAccounts() {
+    public Iterator<Account> getAccounts() {
 
-		return accounts.iterator();
-	}
+        return accounts.iterator();
+    }
 }

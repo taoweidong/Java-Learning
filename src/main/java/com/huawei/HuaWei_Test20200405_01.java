@@ -36,63 +36,63 @@ import java.util.*;
  */
 public class HuaWei_Test20200405_01 {
 
-  public static void main(String[] args) {
-    int[] arr1 = new int[] {14, 2, 15, 54, 23, 5};
-    int[] arr2 = new int[] {7, 5, 96, 4, 35, 86};
+    public static void main(String[] args) {
+        int[] arr1 = new int[] {14, 2, 15, 54, 23, 5};
+        int[] arr2 = new int[] {7, 5, 96, 4, 35, 86};
 
-    int[] newArr1 = new int[arr1.length];
-    int[] newArr2 = new int[arr2.length];
-    List dataList = sort(arr1, arr2);
-    Map<String, Integer> arrMap = (Map<String, Integer>) dataList.get(0);
-    String[] sortKey = (String[]) dataList.get(1);
-    for (int i = 0; i < sortKey.length / 2; i++) {
-      newArr1[i] = arrMap.get(sortKey[2 * i]);
-      newArr2[i] = arrMap.get(sortKey[2 * i + 1]);
-    }
-    print(newArr1);
-    print(newArr2);
-  }
-
-  public static List sort(int[] arr1, int[] arr2) {
-    // 新建一个Map，此处的目的是，保留每一个数字来自于哪一个数组
-    Map<String, Integer> arrMap = new HashMap<String, Integer>();
-    String[] keyArr = new String[arr1.length + arr2.length];
-    List dataList = new ArrayList();
-    for (int i = 0; i < arr1.length; i++) {
-      arrMap.put("arr1[" + i + "]", arr1[i]);
-      arrMap.put("arr2[" + i + "]", arr2[i]);
-    }
-
-    // 对合并后的数组进行排序
-
-    Set<String> arrSet = arrMap.keySet();
-    Iterator<String> it = arrSet.iterator();
-    int index = 0;
-    while (it.hasNext()) {
-      keyArr[index] = it.next();
-      index++;
-    }
-
-    // 选择排序,根据key对应的数据的大小来排列key，这样key对应的数就是有序的
-    for (int i = 0; i < keyArr.length; i++) {
-      for (int j = i; j < keyArr.length; j++) {
-        if (arrMap.get(keyArr[i]) < arrMap.get(keyArr[j])) {
-          String temp = keyArr[i];
-          keyArr[i] = keyArr[j];
-          keyArr[j] = temp;
+        int[] newArr1 = new int[arr1.length];
+        int[] newArr2 = new int[arr2.length];
+        List dataList = sort(arr1, arr2);
+        Map<String, Integer> arrMap = (Map<String, Integer>)dataList.get(0);
+        String[] sortKey = (String[])dataList.get(1);
+        for (int i = 0; i < sortKey.length / 2; i++) {
+            newArr1[i] = arrMap.get(sortKey[2 * i]);
+            newArr2[i] = arrMap.get(sortKey[2 * i + 1]);
         }
-      }
+        print(newArr1);
+        print(newArr2);
     }
-    dataList.add(arrMap);
-    dataList.add(keyArr);
-    return dataList;
-  }
 
-  public static void print(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-      System.out.print(arr[i] + " ");
+    public static List sort(int[] arr1, int[] arr2) {
+        // 新建一个Map，此处的目的是，保留每一个数字来自于哪一个数组
+        Map<String, Integer> arrMap = new HashMap<String, Integer>();
+        String[] keyArr = new String[arr1.length + arr2.length];
+        List dataList = new ArrayList();
+        for (int i = 0; i < arr1.length; i++) {
+            arrMap.put("arr1[" + i + "]", arr1[i]);
+            arrMap.put("arr2[" + i + "]", arr2[i]);
+        }
+
+        // 对合并后的数组进行排序
+
+        Set<String> arrSet = arrMap.keySet();
+        Iterator<String> it = arrSet.iterator();
+        int index = 0;
+        while (it.hasNext()) {
+            keyArr[index] = it.next();
+            index++;
+        }
+
+        // 选择排序,根据key对应的数据的大小来排列key，这样key对应的数就是有序的
+        for (int i = 0; i < keyArr.length; i++) {
+            for (int j = i; j < keyArr.length; j++) {
+                if (arrMap.get(keyArr[i]) < arrMap.get(keyArr[j])) {
+                    String temp = keyArr[i];
+                    keyArr[i] = keyArr[j];
+                    keyArr[j] = temp;
+                }
+            }
+        }
+        dataList.add(arrMap);
+        dataList.add(keyArr);
+        return dataList;
     }
-    System.out.println();
-    System.out.println("--------------------");
-  }
+
+    public static void print(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        System.out.println("--------------------");
+    }
 }

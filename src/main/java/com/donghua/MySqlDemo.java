@@ -12,9 +12,9 @@ public class MySqlDemo {
         try {
 
             IUser userService = new UserService();
-            //查询指定账户信息
+            // 查询指定账户信息
             System.out.println(userService.queryByAccount("20200711001"));
-            //开户功能
+            // 开户功能
             User user = new User();
             user.setAccount("20200711002");
             user.setName("李四");
@@ -23,7 +23,6 @@ public class MySqlDemo {
             user.setPwd("145222");
             user.setMoney(BigInteger.valueOf(5000000));
             userService.add(user);
-
 
         } catch (Exception e) {
             // 处理 Class.forName 错误

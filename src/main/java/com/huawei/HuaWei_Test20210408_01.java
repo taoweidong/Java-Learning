@@ -38,25 +38,25 @@ import java.util.Stack;
  */
 public class HuaWei_Test20210408_01 {
 
-  public static void main(String[] args) {
-    int[] nums1 = {4, 1, 2};
-    int[] nums2 = {1, 3, 4, 2};
-    int[] result = new HuaWei_Test20210408_01().nextGreaterElement(nums2);
-    System.out.println(Arrays.toString(result));
-  }
-
-  public int[] nextGreaterElement(int[] nums) {
-    int n = nums.length;
-    int[] result = new int[n];
-    // 初始化数组
-    Arrays.fill(result, -1);
-    Stack<Integer> stack = new Stack<>();
-    for (int i = 0; i < n * 2 - 1; i++) {
-      while (!stack.isEmpty() && nums[stack.peek()] < nums[i % n]) {
-        result[stack.pop()] = nums[i % n];
-      }
-      stack.push(i % n);
+    public static void main(String[] args) {
+        int[] nums1 = {4, 1, 2};
+        int[] nums2 = {1, 3, 4, 2};
+        int[] result = new HuaWei_Test20210408_01().nextGreaterElement(nums2);
+        System.out.println(Arrays.toString(result));
     }
-    return result;
-  }
+
+    public int[] nextGreaterElement(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        // 初始化数组
+        Arrays.fill(result, -1);
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < n * 2 - 1; i++) {
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[i % n]) {
+                result[stack.pop()] = nums[i % n];
+            }
+            stack.push(i % n);
+        }
+        return result;
+    }
 }

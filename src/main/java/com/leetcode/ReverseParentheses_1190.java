@@ -10,7 +10,7 @@ import java.util.Stack;
 public class ReverseParentheses_1190 {
     public String reverseParentheses(String s) {
 
-        //接受结果
+        // 接受结果
         Stack<String> stack = new Stack<>();
 
         for (Character item : s.toCharArray()) {

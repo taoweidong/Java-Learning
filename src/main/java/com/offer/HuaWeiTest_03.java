@@ -20,19 +20,18 @@ public class HuaWeiTest_03 {
         Stack<Integer> number = new Stack<>();
         Stack<Character> oper = new Stack<>();
 
-
         for (int i = 0; i < strArray.length; i++) {
             char item = str.charAt(i);
             if (isNumber(item)) {
-                //如果是数字，直接入栈
+                // 如果是数字，直接入栈
                 number.push(item - '0');
             } else {
                 if (oper.isEmpty()) {
                     oper.push(item);
                 } else {
-                    //检查优先级
+                    // 检查优先级
                     if (priority(item) <= priority(oper.peek())) {
-                        //计算值，然后加入到数栈中
+                        // 计算值，然后加入到数栈中
                         int a = number.pop();
                         int b = number.pop();
                         number.push(cal(a, b, oper.pop()));
@@ -44,7 +43,7 @@ public class HuaWeiTest_03 {
             }
         }
 
-        //测试结果
+        // 测试结果
         System.out.println(JSON.toJSONString(number));
         System.out.println(JSON.toJSONString(oper));
 
@@ -57,7 +56,7 @@ public class HuaWeiTest_03 {
             number.push(cal(a, b, oper.pop()));
         }
 
-        //最终计算结果
+        // 最终计算结果
         System.out.println(number.pop());
 
     }
@@ -77,7 +76,7 @@ public class HuaWeiTest_03 {
                 result = a + b;
                 break;
             case '-':
-                //注意顺序
+                // 注意顺序
                 result = b - a;
                 break;
             case '*':
@@ -95,7 +94,8 @@ public class HuaWeiTest_03 {
     /**
      * 检查是否为数字
      *
-     * @param val 检查的字符
+     * @param val
+     *            检查的字符
      * @return True:为数字
      */
     public static boolean isNumber(char val) {
@@ -105,7 +105,8 @@ public class HuaWeiTest_03 {
     /**
      * 检查运算符优先级
      *
-     * @param oper 操作符
+     * @param oper
+     *            操作符
      * @return 优先级
      */
     public static int priority(int oper) {
@@ -117,6 +118,5 @@ public class HuaWeiTest_03 {
             return -1;
         }
     }
-
 
 }

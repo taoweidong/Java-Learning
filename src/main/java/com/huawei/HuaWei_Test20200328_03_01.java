@@ -25,16 +25,13 @@ package com.huawei;
 import java.util.Scanner;
 
 /**
- * 字符串相乘
- * 该算法是通过两数相乘时，乘数某位与被乘数某位相乘，与产生结果的位置的规律来完成。具体规律如下：
+ * 字符串相乘 该算法是通过两数相乘时，乘数某位与被乘数某位相乘，与产生结果的位置的规律来完成。具体规律如下：
  * <p>
- * 乘数 num1 位数为 MMM，被乘数 num2 位数为 NNN， num1 x num2 结果 res 最大总位数为 M+N
- * num1[i] x num2[j] 的结果为 tmp(位数为两位，"0x","xy"的形式)，其第一位位于 res[i+j]，第二位位于 res[i+j+1]。
+ * 乘数 num1 位数为 MMM，被乘数 num2 位数为 NNN， num1 x num2 结果 res 最大总位数为 M+N num1[i] x num2[j] 的结果为 tmp(位数为两位，"0x","xy"的形式)，其第一位位于
+ * res[i+j]，第二位位于 res[i+j+1]。
  * <p>
- * 作者：breezean
- * 链接：https://leetcode-cn.com/problems/multiply-strings/solution/you-hua-ban-shu-shi-da-bai-994-by-breezean/
- * 来源：力扣（LeetCode）
- * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ * 作者：breezean 链接：https://leetcode-cn.com/problems/multiply-strings/solution/you-hua-ban-shu-shi-da-bai-994-by-breezean/
+ * 来源：力扣（LeetCode） 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  *
  * @author Taoweidong
  */
@@ -44,7 +41,7 @@ public class HuaWei_Test20200328_03_01 {
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            //输入参数
+            // 输入参数
             String num1 = sc.nextLine();
             String num2 = sc.nextLine();
             System.out.println(multiply(num1, num2));
@@ -86,6 +83,5 @@ public class HuaWei_Test20200328_03_01 {
         }
         return result.toString();
     }
-
 
 }

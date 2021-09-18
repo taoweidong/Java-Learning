@@ -4,51 +4,51 @@ import java.util.Date;
 
 public class User {
 
-	private String id;
+    private String id;
 
-	private String name;
+    private String name;
 
-	private Integer age;
+    private Integer age;
 
-	public String getId() {
+    public String getId() {
 
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(String id) {
+    public void setId(String id) {
 
-		this.id = id;
-	}
+        this.id = id;
+    }
 
-	public String getName() {
+    public String getName() {
 
-		return name;
-	}
+        return name;
+    }
 
-	public void setName(String name) {
+    public void setName(String name) {
 
-		this.name = name;
-	}
+        this.name = name;
+    }
 
-	public Integer getAge() {
+    public Integer getAge() {
 
-		return age;
-	}
+        return age;
+    }
 
-	public void setAge(Integer age) {
+    public void setAge(Integer age) {
 
-		this.age = age;
-	}
+        this.age = age;
+    }
 
-	public Date getBirthday() {
+    public Date getBirthday() {
 
-		return birthday;
-	}
+        return birthday;
+    }
 
-	public void setBirthday(Date birthday) {
+    public void setBirthday(Date birthday) {
 
-		this.birthday = birthday;
-	}
+        this.birthday = birthday;
+    }
 
-	private Date birthday;
+    private Date birthday;
 }

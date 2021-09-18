@@ -20,7 +20,7 @@ public class SellTickedDemo2 {
         @Override
         public void run() {
             while (true) {
-                //同步代码块解决线程安全问题
+                // 同步代码块解决线程安全问题
                 synchronized (object) {
                     if (tickets > 0) {
                         try {
@@ -30,7 +30,7 @@ public class SellTickedDemo2 {
                         }
                         System.out.println(Thread.currentThread().getName() + "正在出售第【" + (tickets--) + "】张票");
                     } else {
-                        Thread.interrupted();//如果票卖完了，就把线程停止掉
+                        Thread.interrupted();// 如果票卖完了，就把线程停止掉
                     }
                 }
             }
@@ -40,12 +40,12 @@ public class SellTickedDemo2 {
     public static void main(String[] args) {
         SellTick sellTick = new SellTick();
 
-        //创建三个线程对象
+        // 创建三个线程对象
         Thread st1 = new Thread(sellTick, "窗口1");
         Thread st2 = new Thread(sellTick, "窗口2");
         Thread st3 = new Thread(sellTick, "窗口3");
 
-        //启动多线程
+        // 启动多线程
         st1.start();
         st2.start();
         st3.start();

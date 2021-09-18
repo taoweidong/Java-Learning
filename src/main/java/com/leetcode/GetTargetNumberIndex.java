@@ -6,8 +6,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 
 /**
- * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
- * 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。<br/>
+ * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。<br/>
  * 给定 nums = [2, 7, 11, 15], target = 9 因为 nums[0] + nums[1] = 2 + 7 = 9 所以返回 [0, 1]
  *
  * @author Taowd
@@ -49,8 +48,8 @@ public class GetTargetNumberIndex {
     }
 
     /**
-     * 一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target−nums[i]target
-     * - nums[i]target−nums[i]）是否存在于表中。注意，该目标元素不能是 nums[i]nums[i]nums[i] 本身！<br/>
+     * 一个简单的实现使用了两次迭代。在第一次迭代中，我们将每个元素的值和它的索引添加到表中。然后，在第二次迭代中，我们将检查每个元素所对应的目标元素（target−nums[i]target -
+     * nums[i]target−nums[i]）是否存在于表中。注意，该目标元素不能是 nums[i]nums[i]nums[i] 本身！<br/>
      * 空间换时间 效率更高.
      *
      * @param nums
@@ -66,7 +65,7 @@ public class GetTargetNumberIndex {
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement) && map.get(complement) != i) {
-                return new int[]{i, map.get(complement)};
+                return new int[] {i, map.get(complement)};
             }
         }
         throw new IllegalArgumentException("No tow sum solution");

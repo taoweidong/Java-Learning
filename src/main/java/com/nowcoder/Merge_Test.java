@@ -8,7 +8,7 @@ package com.nowcoder;
  */
 public class Merge_Test {
 
-    //定义链表结构
+    // 定义链表结构
     static class ListNode {
 
         /**
@@ -34,7 +34,7 @@ public class Merge_Test {
 
     public static void main(String[] args) {
 
-        //创建第一个链表
+        // 创建第一个链表
         ListNode node = new ListNode(12);
         ListNode node1 = new ListNode(34);
         ListNode node2 = new ListNode(45);
@@ -43,7 +43,7 @@ public class Merge_Test {
         node1.next = node2;
         node2.next = node3;
 
-        //创建第二个链表
+        // 创建第二个链表
         ListNode node11 = new ListNode(6);
         ListNode node12 = new ListNode(8);
         ListNode node13 = new ListNode(14);
@@ -52,7 +52,7 @@ public class Merge_Test {
         node12.next = node13;
         node13.next = node14;
 
-        //遍历第一个链表数据
+        // 遍历第一个链表数据
         ListNode n = node;
         while (n != null) {
             if (n.next != null) {
@@ -64,7 +64,7 @@ public class Merge_Test {
         }
         System.out.println();
 
-        //遍历第二个链表数据
+        // 遍历第二个链表数据
         ListNode n2 = node11;
         while (n2 != null) {
             if (n2.next != null) {
@@ -76,7 +76,7 @@ public class Merge_Test {
         }
         System.out.println();
 
-        //链表合并
+        // 链表合并
         ListNode n1 = Merge(node, node11);
         while (n1 != null) {
             if (n1.next != null) {
@@ -93,8 +93,10 @@ public class Merge_Test {
     /**
      * 合并链表
      *
-     * @param list1 单调递增的第一个链表
-     * @param list2 单调递增的第二个链表
+     * @param list1
+     *            单调递增的第一个链表
+     * @param list2
+     *            单调递增的第二个链表
      * @return 合并之后的链表
      */
     public static ListNode Merge(ListNode list1, ListNode list2) {

@@ -12,7 +12,7 @@ public class Huawei_20200610_01 {
         String[] input = sc.nextLine().trim().split(" ");
         int n = Integer.valueOf(input[0]);
         int e = Integer.valueOf(input[1]);
-        //开始接受指令
+        // 开始接受指令
         List<Integer> x = new ArrayList<>();
         Map<Integer, Integer> xMap = new LinkedHashMap<>();
         int ySum = 0;

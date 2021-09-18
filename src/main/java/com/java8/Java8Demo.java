@@ -2,8 +2,8 @@ package com.java8;
 
 public class Java8Demo {
 
-	public String getName() {
+    public String getName() {
 
-		return "Java8Demo------->Hello World!!!";
-	}
+        return "Java8Demo------->Hello World!!!";
+    }
 }

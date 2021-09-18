@@ -5,8 +5,7 @@ import com.alibaba.fastjson.JSON;
 import java.util.*;
 
 /**
- * 给出一个仅包含字母的字符串，不包含空格，统计字符串中各个字母出现的次数，并按照字母出现的次数从大到小
- * 的顺序输出各个字母及其出现的次数信息，如果次数相同，按照自然顺序进行排序
+ * 给出一个仅包含字母的字符串，不包含空格，统计字符串中各个字母出现的次数，并按照字母出现的次数从大到小 的顺序输出各个字母及其出现的次数信息，如果次数相同，按照自然顺序进行排序
  *
  * @author Taoweidong
  */
@@ -16,10 +15,10 @@ public class HuaWei_Test20200328_04_04 {
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            //输入参数
+            // 输入参数
             String str = sc.nextLine();
 
-            //统计字符出现的个数
+            // 统计字符出现的个数
             Data[] datas = new Data[28];
             for (Character item : str.toCharArray()) {
                 Data data;
@@ -36,7 +35,7 @@ public class HuaWei_Test20200328_04_04 {
 
             }
 
-            //排序
+            // 排序
             for (int i = 0; i < datas.length; i++) {
                 for (int j = 0; j < datas.length - i - 1; j++) {
                     if (datas[j].count < datas[j + 1].count) {

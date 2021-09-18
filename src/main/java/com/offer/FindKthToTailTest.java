@@ -32,14 +32,12 @@ public class FindKthToTailTest {
         System.out.println();
 
         int k = 2;
-        System.out.println("倒数第" + k + "个结点,计算结果:" + (FindKthToTail(node, k) == null ?
-                null :
-                FindKthToTail(node, k).val));
+        System.out
+            .println("倒数第" + k + "个结点,计算结果:" + (FindKthToTail(node, k) == null ? null : FindKthToTail(node, k).val));
     }
 
     /**
-     * 两个指针，先让第一个指针和第二个指针都指向头结点，然后再让第一个指针走(k-1)步，到达第k个节点。
-     * 然后两个指针同时往后移动，当第一个结点到达末尾的时候，第二个结点所在位置就是倒数第k个节点了。
+     * 两个指针，先让第一个指针和第二个指针都指向头结点，然后再让第一个指针走(k-1)步，到达第k个节点。 然后两个指针同时往后移动，当第一个结点到达末尾的时候，第二个结点所在位置就是倒数第k个节点了。
      *
      * @param head
      * @param k
@@ -47,23 +45,23 @@ public class FindKthToTailTest {
      */
     public static ListNode FindKthToTail(ListNode head, int k) {
 
-        //检查入参合法性
+        // 检查入参合法性
         if (head == null) {
             return null;
         }
 
-        //定义两个指针
+        // 定义两个指针
         ListNode pre = head;
         ListNode last = head;
 
-        //先让第一个指针走k步到达k的位置
+        // 先让第一个指针走k步到达k的位置
         for (int i = 0; i < k - 1; i++) {
             if (pre != null) {
                 pre = pre.next;
             }
         }
 
-        //然后让两个指针一起出发，当第一个指针走到最后时，第二个指针就在倒数第k个位置
+        // 然后让两个指针一起出发，当第一个指针走到最后时，第二个指针就在倒数第k个位置
         while (pre.next != null) {
             pre = pre.next;
             last = last.next;

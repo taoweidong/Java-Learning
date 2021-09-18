@@ -59,60 +59,61 @@ import java.util.Map;
 
 /**
  * 罗马数字转整数
+ * 
  * @author Taoweidong
  */
 public class RomanToInteger {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new RomanToInteger().new Solution();
-		System.out.println(solution.romanToInt("IV"));
-	}
+        Solution solution = new RomanToInteger().new Solution();
+        System.out.println(solution.romanToInt("IV"));
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public int romanToInt(String s) {
+        public int romanToInt(String s) {
 
-			Map<String, Integer> romanMap = new HashMap<String, Integer>(8) {
+            Map<String, Integer> romanMap = new HashMap<String, Integer>(8) {
 
-				{
-					put("I", 1);
-					put("V", 5);
-					put("X", 10);
-					put("L", 50);
-					put("C", 100);
-					put("D", 500);
-					put("M", 1000);
+                {
+                    put("I", 1);
+                    put("V", 5);
+                    put("X", 10);
+                    put("L", 50);
+                    put("C", 100);
+                    put("D", 500);
+                    put("M", 1000);
 
-					put("IV", 4);
-					put("IX", 9);
-					put("XL", 40);
-					put("XC", 90);
-					put("CD", 400);
-					put("CM", 900);
-				}
-			};
+                    put("IV", 4);
+                    put("IX", 9);
+                    put("XL", 40);
+                    put("XC", 90);
+                    put("CD", 400);
+                    put("CM", 900);
+                }
+            };
 
-			int result = 0;
+            int result = 0;
 
-			while (s.length() != 0) {
-				// 检查是否有两个数字的罗马字
-				if (s.length() >= 2) {
-					String temp = s.substring(0, 2);
-					if (romanMap.containsKey(temp)) {
-						result += romanMap.get(temp);
-						s = s.substring(2);
-						continue;
-					}
-				}
-				result += romanMap.get(s.substring(0, 1));
-				s = s.substring(1);
-			}
+            while (s.length() != 0) {
+                // 检查是否有两个数字的罗马字
+                if (s.length() >= 2) {
+                    String temp = s.substring(0, 2);
+                    if (romanMap.containsKey(temp)) {
+                        result += romanMap.get(temp);
+                        s = s.substring(2);
+                        continue;
+                    }
+                }
+                result += romanMap.get(s.substring(0, 1));
+                s = s.substring(1);
+            }
 
-			return result;
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            return result;
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }

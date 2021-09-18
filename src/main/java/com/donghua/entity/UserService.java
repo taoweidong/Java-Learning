@@ -32,8 +32,8 @@ public class UserService implements IUser {
         // 执行的SQL语句!!!!!!!!!!!!!!!!!!!
         String sql = "insert into t_user (account,name,card_type,card_id,pwd,money)";
         sql += " value (?,?,?,?,?,?)";
-        Object[] params = {user.getAccount(),
-                user.getName(), user.getCard_type(), user.getCard_id(), user.getPwd(), user.getMoney()};
+        Object[] params =
+            {user.getAccount(), user.getName(), user.getCard_type(), user.getCard_id(), user.getPwd(), user.getMoney()};
         JdbcUtils.insert(connection, sql, params);
     }
 

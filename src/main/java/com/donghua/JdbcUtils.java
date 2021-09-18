@@ -23,7 +23,7 @@ public class JdbcUtils {
          * 驱动注册
          */
         try {
-            Class.forName(driverClass);//注册加载驱动
+            Class.forName(driverClass);// 注册加载驱动
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -115,9 +115,9 @@ public class JdbcUtils {
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement(sql);
-            if (null != parems && parems.length > 0) {//判断是否有信息增加
+            if (null != parems && parems.length > 0) {// 判断是否有信息增加
                 for (int i = 0; i < parems.length; i++) {
-                    stmt.setObject(i + 1, parems[i]);//使用给定对象设置指定参数的值
+                    stmt.setObject(i + 1, parems[i]);// 使用给定对象设置指定参数的值
                 }
             }
             int count = stmt.executeUpdate();
@@ -138,13 +138,14 @@ public class JdbcUtils {
      * @return
      * @throws SQLException
      */
-    public static <T> List<T> executeQuery(Connection conn, String sql, Object[] paramsList, RowsMapper<T> rm) throws SQLException {
+    public static <T> List<T> executeQuery(Connection conn, String sql, Object[] paramsList, RowsMapper<T> rm)
+        throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         List<T> list = new ArrayList<T>();
         try {
             stmt = conn.prepareStatement(sql);
-            if (null != paramsList && paramsList.length > 0) {//判断是否有信息增加
+            if (null != paramsList && paramsList.length > 0) {// 判断是否有信息增加
                 for (int i = 0; i < paramsList.length; i++) {
                     stmt.setObject(i + 1, paramsList[i]);
                 }

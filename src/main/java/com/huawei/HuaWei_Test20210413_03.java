@@ -35,38 +35,38 @@ import java.util.Stack;
  */
 public class HuaWei_Test20210413_03 {
 
-  public static void main(String[] args) {
-    int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-    int result = new HuaWei_Test20210413_03().trap(height);
-    System.out.println(result);
-  }
-
-  public int trap(int[] height) {
-    //    输出结果
-    int result = 0;
-    //    特殊情况处理
-    if (height == null || height.length == 0) {
-      return result;
+    public static void main(String[] args) {
+        int[] height = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int result = new HuaWei_Test20210413_03().trap(height);
+        System.out.println(result);
     }
-    //    定义单调栈
-    Stack<Integer> stack = new Stack<>();
 
-    for (int i = 0; i < height.length; i++) {
-      while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
-        int top = stack.pop();
-        if (stack.isEmpty()) {
-          break;
+    public int trap(int[] height) {
+        // 输出结果
+        int result = 0;
+        // 特殊情况处理
+        if (height == null || height.length == 0) {
+            return result;
         }
-        // 计算低洼处的宽度和高度
-        // 宽度
-        int width = i - stack.peek() - 1;
-        // 计算高度
-        int h = Math.min(height[i], height[stack.peek()]) - height[top];
-        // 计算结果
-        result += width * h;
-      }
-      stack.push(i);
+        // 定义单调栈
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < height.length; i++) {
+            while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
+                int top = stack.pop();
+                if (stack.isEmpty()) {
+                    break;
+                }
+                // 计算低洼处的宽度和高度
+                // 宽度
+                int width = i - stack.peek() - 1;
+                // 计算高度
+                int h = Math.min(height[i], height[stack.peek()]) - height[top];
+                // 计算结果
+                result += width * h;
+            }
+            stack.push(i);
+        }
+        return result;
     }
-    return result;
-  }
 }

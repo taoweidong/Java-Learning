@@ -6,7 +6,6 @@ package com.offer;
  * @author Taoweidong
  */
 
-
 class Node {
     int v;
     Node next;
@@ -25,18 +24,18 @@ public class HuaWeiTest_05 {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-//
-//        showList(node1);
-//        System.out.println("*************");
-//        Node deleteNode = delete(node1, node3);
-//        showList(deleteNode);
-//        System.out.println("*************");
-//        showList(node1);
-//        System.out.println("*************");
-//        System.out.println(JSON.toJSONString(getK(node1, 2).v));
+        //
+        // showList(node1);
+        // System.out.println("*************");
+        // Node deleteNode = delete(node1, node3);
+        // showList(deleteNode);
+        // System.out.println("*************");
+        // showList(node1);
+        // System.out.println("*************");
+        // System.out.println(JSON.toJSONString(getK(node1, 2).v));
         showList(node1);
         System.out.println("*************");
-//        reverseList(node1);
+        // reverseList(node1);
         showList(reverseList(node1));
     }
 
@@ -49,20 +48,20 @@ public class HuaWeiTest_05 {
         if (node == null || node.next == null) {
             return node;
         }
-        //开始反转操作
-        //辅助变量，帮助遍历原来的链表
+        // 开始反转操作
+        // 辅助变量，帮助遍历原来的链表
         Node curr = node;
-        //当前节点的下一个节点
+        // 当前节点的下一个节点
         Node next = null;
-        //新节点
+        // 新节点
         Node newNode = new Node(0);
         while (curr != null) {
-            //暂时当前节点的下一个节点
+            // 暂时当前节点的下一个节点
             next = curr.next;
-            //头插节点
+            // 头插节点
             curr.next = newNode.next;
             newNode.next = curr;
-            //后移一次
+            // 后移一次
             curr = next;
         }
         return newNode.next;
@@ -124,7 +123,7 @@ public class HuaWeiTest_05 {
 
         Node temp = node;
         while (true) {
-            //找到要删除节点的前一个节点
+            // 找到要删除节点的前一个节点
             if (temp.next.v == delete.v) {
                 temp.next = temp.next.next;
                 break;
@@ -134,6 +133,4 @@ public class HuaWeiTest_05 {
         return node;
     }
 
-
 }
-

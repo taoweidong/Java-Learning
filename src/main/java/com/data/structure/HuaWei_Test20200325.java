@@ -17,21 +17,21 @@ public class HuaWei_Test20200325 {
 
         String str;
         while ((str = sc.readLine()) != null) {
-            //输入的链表节点的个数
+            // 输入的链表节点的个数
             int count = Integer.valueOf(str);
 
-            //定义头结点
+            // 定义头结点
             ListNode node = new ListNode(0);
-            //根据输入链表的值构造链表信息
+            // 根据输入链表的值构造链表信息
             String[] strArr = sc.readLine().split(" ");
             for (int i = 0; i < strArr.length; i++) {
                 ListNode item = new ListNode(Integer.valueOf(strArr[i]));
                 addNode(node, item);
             }
-            //倒数的节点数
+            // 倒数的节点数
             int find = Integer.valueOf(sc.readLine());
             if (find == 0) {
-                //异常情况处理
+                // 异常情况处理
                 System.out.println(0);
             } else {
                 ListNode result = findByLastValue(node, count, find);
@@ -46,8 +46,10 @@ public class HuaWei_Test20200325 {
     /**
      * 添加链表
      *
-     * @param node    链表头
-     * @param newNode 节点
+     * @param node
+     *            链表头
+     * @param newNode
+     *            节点
      */
     public static void addNode(ListNode node, ListNode newNode) {
 
@@ -55,7 +57,7 @@ public class HuaWei_Test20200325 {
             return;
         }
 
-        //定义临时节点
+        // 定义临时节点
         ListNode nextNode = node;
         while (nextNode.next != null) {
             nextNode = nextNode.next;
@@ -67,13 +69,16 @@ public class HuaWei_Test20200325 {
     /**
      * 找到链表node的倒数第find的节点
      *
-     * @param node  链表
-     * @param count 总数
-     * @param find  倒数节点
+     * @param node
+     *            链表
+     * @param count
+     *            总数
+     * @param find
+     *            倒数节点
      * @return 找的的节点值
      */
     public static ListNode findByLastValue(ListNode node, int count, int find) {
-        //定义临时节点
+        // 定义临时节点
         ListNode nextNode = node.next;
         for (int i = 0; i < (count - find); i++) {
             nextNode = nextNode.next;

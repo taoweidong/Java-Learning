@@ -19,7 +19,6 @@ public class LongestSubarray_1438 {
         int limit = 5;
         System.out.println(longestSubarray_1438.longestSubarray(nums, limit));
 
-
     }
 
     public int longestSubarray(int[] nums, int limit) {
@@ -27,26 +26,26 @@ public class LongestSubarray_1438 {
             return 0;
         }
 
-        //窗口内的最大值
+        // 窗口内的最大值
         int windows_max = nums[0];
-        //窗口内的最小值
+        // 窗口内的最小值
         int windows_min = nums[0];
 
         Queue<Integer> windows_nums = new LinkedList<>();
 
         for (int item : nums) {
-            //该窗口内的数据满足条件
+            // 该窗口内的数据满足条件
             if (Math.abs(item - windows_max) <= limit && Math.abs(item - windows_min) <= limit
-                    && Math.abs(windows_min - windows_max) <= limit) {
+                && Math.abs(windows_min - windows_max) <= limit) {
                 windows_max = Math.max(item, windows_max);
                 windows_min = Math.min(item, windows_min);
-                //把当前元素添加到窗口记录中
+                // 把当前元素添加到窗口记录中
                 windows_nums.offer(item);
             } else {
                 windows_nums.offer(item);
-                //把最左边的元素出队列
+                // 把最左边的元素出队列
                 windows_nums.poll();
-                //更新最大最小值
+                // 更新最大最小值
                 windows_max = Collections.max(windows_nums);
                 windows_min = Collections.min(windows_nums);
             }

@@ -61,13 +61,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "account='" + account + '\'' +
-                ", name='" + name + '\'' +
-                ", card_type='" + card_type + '\'' +
-                ", card_id='" + card_id + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", money=" + money +
-                '}';
+        return "User{" + "account='" + account + '\'' + ", name='" + name + '\'' + ", card_type='" + card_type + '\''
+            + ", card_id='" + card_id + '\'' + ", pwd='" + pwd + '\'' + ", money=" + money + '}';
     }
 }

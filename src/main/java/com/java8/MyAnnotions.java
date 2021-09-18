@@ -13,13 +13,14 @@ import java.lang.annotation.Target;
 
 /**
  * 自定义注解
+ * 
  * @author taowd
  * @version 2019年4月27日
  * @see MyAnnotions
  */
-@Target({ TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE })
+@Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotions {
 
-	MyAnnotion[] value();
+    MyAnnotion[] value();
 }

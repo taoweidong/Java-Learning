@@ -35,7 +35,7 @@ public class NextPermutation {
                 if (nums[i] < nums[i + 1]) {
                     int j = nums.length - 1;
                     for (; j > i && nums[j] <= nums[i]; j--) {
-                        //找到下一个更大的排列而不是任意更大排列
+                        // 找到下一个更大的排列而不是任意更大排列
                     }
                     int temp = nums[i];
                     nums[i] = nums[j];

@@ -5,12 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * 变量替换
- * 4
- * xxx=aaa/mm${ttt}/hello
- * yyy=World
- * ttt=MyHello
- * aaa=java/${xxx}/${yyy}/uuu/ooo
+ * 变量替换 4 xxx=aaa/mm${ttt}/hello yyy=World ttt=MyHello aaa=java/${xxx}/${yyy}/uuu/ooo
  *
  * @author Taoweidong
  */
@@ -20,7 +15,7 @@ public class HuaWei_Test20200401_01 {
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            //赋值语句行数
+            // 赋值语句行数
             int count = Integer.valueOf(sc.nextLine());
             String result = "";
 
@@ -51,8 +46,8 @@ public class HuaWei_Test20200401_01 {
             if (arr[i].contains("$")) {
 
                 String key = arr[i].substring(arr[i].indexOf("$") + 2, arr[i].indexOf("}"));
-                arr[i] = arr[i].substring(0, arr[i].indexOf("$")) + map.get(key) + arr[i]
-                        .substring(arr[i].indexOf("}") + 1);
+                arr[i] =
+                    arr[i].substring(0, arr[i].indexOf("$")) + map.get(key) + arr[i].substring(arr[i].indexOf("}") + 1);
             }
         }
 

@@ -19,4 +19,3 @@ public class HuaWei_Test20200305_02 {
     }
 
 }
-

@@ -2,6 +2,7 @@ package com.java8;
 
 /**
  * 函数式接口
+ * 
  * @author Taowd
  * @version 2019年1月30日
  * @see MyNumber
@@ -9,5 +10,5 @@ package com.java8;
 @FunctionalInterface
 public interface MyNumber {
 
-	public Integer getValue();
+    public Integer getValue();
 }

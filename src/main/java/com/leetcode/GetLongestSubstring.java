@@ -21,7 +21,8 @@ class GetLongestSubstring {
     /**
      * 获取最长顺序子串.
      *
-     * @param inputStr 待处理字符串
+     * @param inputStr
+     *            待处理字符串
      * @return 最长顺序子串
      */
     public static String searchStr(String inputStr) {

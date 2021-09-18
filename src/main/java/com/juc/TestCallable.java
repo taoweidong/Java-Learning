@@ -9,39 +9,39 @@ import java.util.concurrent.FutureTask;
  */
 public class TestCallable {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ThreadDemo222 t = new ThreadDemo222();
+        ThreadDemo222 t = new ThreadDemo222();
 
-		FutureTask futureTask = new FutureTask(t);
-		new Thread(futureTask).start();
+        FutureTask futureTask = new FutureTask(t);
+        new Thread(futureTask).start();
 
-		// FutureTasK也可以用于闭锁
+        // FutureTasK也可以用于闭锁
 
-		System.out.println("------------------------------------------");
+        System.out.println("------------------------------------------");
 
-		try {
-			System.out.println(futureTask.get());
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
+        try {
+            System.out.println(futureTask.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 }
 
 class ThreadDemo222 implements Callable<Integer> {
 
-	@Override
-	public Integer call() throws Exception {
+    @Override
+    public Integer call() throws Exception {
 
-		int sum = 0;
-		for (int i = 0; i <= 1000000; i++) {
-			System.out.println(i);
-			sum += i;
-		}
+        int sum = 0;
+        for (int i = 0; i <= 1000000; i++) {
+            System.out.println(i);
+            sum += i;
+        }
 
-		return sum;
-	}
+        return sum;
+    }
 }

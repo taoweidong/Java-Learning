@@ -7,32 +7,33 @@ package com.singleton;
  */
 public class Singleton3 {
 
-	/**
-	 * 设置为内存可见性
-	 */
-	private static volatile Singleton3 instance = null;
+    /**
+     * 设置为内存可见性
+     */
+    private static volatile Singleton3 instance = null;
 
-	/**
-	 * 私有化构造函数
-	 */
-	private Singleton3() {
+    /**
+     * 私有化构造函数
+     */
+    private Singleton3() {
 
-	}
+    }
 
-	/**
-	 * 提供外部调用
-	 * @return 实例对象
-	 */
-	public static Singleton3 getInstance() {
+    /**
+     * 提供外部调用
+     * 
+     * @return 实例对象
+     */
+    public static Singleton3 getInstance() {
 
-		if (instance == null) {
-			// 同步代码块
-			synchronized (Singleton3.class) {
-				if (instance == null) {
-					instance = new Singleton3();
-				}
-			}
-		}
-		return instance;
-	}
+        if (instance == null) {
+            // 同步代码块
+            synchronized (Singleton3.class) {
+                if (instance == null) {
+                    instance = new Singleton3();
+                }
+            }
+        }
+        return instance;
+    }
 }

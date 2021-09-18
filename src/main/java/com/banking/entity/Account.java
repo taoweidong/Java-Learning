@@ -3,56 +3,59 @@ package com.banking.entity;
 import com.banking.exception.OverdraftException;
 
 /**
- * Java ÓïÑÔÖÐÃæÏò¶ÔÏóµÄ·â×°ÐÔ¼°¹¹ÔìÆ÷µÄ´´½¨ºÍÊ¹ÓÃ¡£
- * ÕËºÅÊµÌå
+ * Java ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½×°ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½ ï¿½Ëºï¿½Êµï¿½ï¿½
+ * 
  * @author taowd
- * @version 2019Äê5ÔÂ12ÈÕ
+ * @version 2019ï¿½ï¿½5ï¿½ï¿½12ï¿½ï¿½
  * @see Account
  */
 public class Account {
 
-	/*
-	 * ÊµÑéËµÃ÷£º £º
-	 * ÔÚÕâ¸öÁ·Ï°Àï£¬´´½¨Ò»¸ö¼òµ¥°æ±¾µÄ Account Àà¡£½«Õâ¸öÔ´ÎÄ¼þ·ÅÈë banking ³Ì
-	 * Ðò°üÖÐ¡£ÔÚ´´½¨µ¥¸öÕÊ»§µÄÄ¬ÈÏ³ÌÐò°üÖÐ£¬ÒÑ±àÐ´ÁËÒ»¸ö²âÊÔ³ÌÐò TestBanking¡£
-	 * Õâ¸ö²âÊÔ³ÌÐò³õÊ¼»¯ÕÊ»§Óà¶î£¬²¢¿ÉÖ´ÐÐ¼¸ÖÖ¼òµ¥µÄÊÂÎï´¦Àí¡£×îºó£¬¸Ã²âÊÔ³Ì Ðò
-	 * ÏÔÊ¾¸ÃÕÊ»§µÄ×îÖÕÓà¶î¡£
-	 */
+    /*
+     * Êµï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½òµ¥°æ±¾ï¿½ï¿½ Account ï¿½à¡£ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ banking ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½Ä¬ï¿½Ï³ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½Ñ±ï¿½Ð´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ TestBankingï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð¼ï¿½ï¿½Ö¼òµ¥µï¿½ï¿½ï¿½ï¿½ï´¦ï¿½ï¿½ï¿½ï¿½ó£¬¸Ã²ï¿½ï¿½Ô³ï¿½ ï¿½ï¿½
+     * ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î¡£
+     */
 
-	protected double balance;
+    protected double balance;
 
-	public Account(double init_balance) {
+    public Account(double init_balance) {
 
-		this.balance = init_balance;
-	}
+        this.balance = init_balance;
+    }
 
-	public double getBalance() {
+    public double getBalance() {
 
-		return balance;
-	}
+        return balance;
+    }
 
-	/**
-	 * ´æÇ®·½·¨
-	 * @param amt: ´æ¿îµÄÇ®Êý
-	 * @return: ·µ»Ø´æ¿îÊÇ·ñ³É¹¦
-	 */
-	public boolean deposit(double amt) {
+    /**
+     * ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½
+     * 
+     * @param amt:
+     *            ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½
+     * @return: ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½Ç·ï¿½É¹ï¿½
+     */
+    public boolean deposit(double amt) {
 
-		this.balance += amt;
-		return true;
-	}
+        this.balance += amt;
+        return true;
+    }
 
-	/**
-	 * @param amt
-	 * @throws OverdraftException: µ±Óà¶î²»×ãÊ±£¬Å×³ö¸ÃÒì³£.
-	 */
-	public void withdraw(double amt) {
+    /**
+     * @param amt
+     * @throws OverdraftException:
+     *             ï¿½ï¿½ï¿½ï¿½î²»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½×³ï¿½ï¿½ï¿½ï¿½ì³£.
+     */
+    public void withdraw(double amt) {
 
-		if (amt > balance) {
-			throw new OverdraftException("×Ê½ð²»×ã", amt - balance);
-		}
+        if (amt > balance) {
+            throw new OverdraftException("ï¿½Ê½ï¿½ï¿½ï¿½", amt - balance);
+        }
 
-		this.balance -= amt;
-	}
+        this.balance -= amt;
+    }
 
 }

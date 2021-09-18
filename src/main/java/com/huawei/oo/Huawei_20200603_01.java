@@ -5,44 +5,36 @@ import java.util.*;
 /**
  * 第k个排列:给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
  * <p>
- * "123"
- * "132"
- * "213"
- * "231"
- * "312"
- * "321"
- * 给定 n 和 k，返回第 k 个排列。
+ * "123" "132" "213" "231" "312" "321" 给定 n 和 k，返回第 k 个排列。
  * <p>
  * 示例 1:
  * <p>
- * 输入: n = 3, k = 3
- * 输出: "213"
+ * 输入: n = 3, k = 3 输出: "213"
  * <p>
  * <p>
- * 容易理解，但是会超时的一种解法
- * https://leetcode-cn.com/problems/permutation-sequence/
+ * 容易理解，但是会超时的一种解法 https://leetcode-cn.com/problems/permutation-sequence/
  */
 public class Huawei_20200603_01 {
 
     public static void main(String[] args) {
-        //处理输入
+        // 处理输入
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
             String[] arr = in.nextLine().trim().split(" ");
             int n = Integer.valueOf(arr[0]);
             int k = Integer.valueOf(arr[1]);
 
-            //进行逻辑处理
+            // 进行逻辑处理
             System.out.println(getPermutation(n, k));
         }
-
 
     }
 
     /**
      * 获取指定数组元素的全排列结果
      *
-     * @param num 待处理数组
+     * @param num
+     *            待处理数组
      * @return 全排列结果
      */
     private static ArrayList<ArrayList<Integer>> permute(int[] num) {
@@ -66,10 +58,8 @@ public class Huawei_20200603_01 {
         return result;
     }
 
-
     /**
-     * 第k个排列:给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
-     * 给定 n 和 k，返回第 k 个排列。
+     * 第k个排列:给出集合 [1,2,3,…,n]，其所有元素共有 n! 种排列。按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下： 给定 n 和 k，返回第 k 个排列。
      *
      * @param n
      * @param k
@@ -82,10 +72,10 @@ public class Huawei_20200603_01 {
             arr[i - 1] = i;
         }
 
-        //进行组合
+        // 进行组合
         ArrayList<ArrayList<Integer>> result = permute(arr);
 
-        //进行降序排列
+        // 进行降序排列
         List<Integer> queue = new ArrayList<>();
         for (ArrayList item : result) {
 
@@ -97,9 +87,8 @@ public class Huawei_20200603_01 {
 
         Collections.sort(queue);
 
-        //输出结果
+        // 输出结果
         return String.valueOf(queue.get(k - 1));
     }
-
 
 }

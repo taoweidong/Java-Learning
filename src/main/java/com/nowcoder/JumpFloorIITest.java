@@ -6,21 +6,21 @@ package com.nowcoder;
  */
 public class JumpFloorIITest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		System.out.println(JumpFloorII(100));
+        System.out.println(JumpFloorII(100));
 
-	}
+    }
 
-	public static int JumpFloorII(int target) {
+    public static int JumpFloorII(int target) {
 
-		if (target == 0) {
-			return 1;
-		} else if (target == 1) {
-			return 1;
-		} else {
-			return 2 * JumpFloorII(target - 1);
-		}
-	}
+        if (target == 0) {
+            return 1;
+        } else if (target == 1) {
+            return 1;
+        } else {
+            return 2 * JumpFloorII(target - 1);
+        }
+    }
 
 }

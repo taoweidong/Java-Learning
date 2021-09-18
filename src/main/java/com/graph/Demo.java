@@ -14,9 +14,9 @@ public class Demo {
         List<String> read_txt = new ArrayList<>();
         read_txt.add("Hello");
 
-        //将结果写入文件
+        // 将结果写入文件
         Path fpath = Paths.get("test.txt");
-        //创建文件
+        // 创建文件
         if (!Files.exists(fpath)) {
             try {
                 Files.createFile(fpath);

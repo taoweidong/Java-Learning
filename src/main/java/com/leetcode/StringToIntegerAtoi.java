@@ -57,23 +57,24 @@ package com.leetcode;
 
 /**
  * 字符串转换整数 (atoi)
+ * 
  * @author Taoweidong
  */
 public class StringToIntegerAtoi {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Solution solution = new StringToIntegerAtoi().new Solution();
-	}
+        Solution solution = new StringToIntegerAtoi().new Solution();
+    }
 
-	// leetcode submit region begin(Prohibit modification and deletion)
-	class Solution {
+    // leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
 
-		public int myAtoi(String str) {
+        public int myAtoi(String str) {
 
-			return 0;
-		}
-	}
-	// leetcode submit region end(Prohibit modification and deletion)
+            return 0;
+        }
+    }
+    // leetcode submit region end(Prohibit modification and deletion)
 
 }

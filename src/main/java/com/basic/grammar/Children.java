@@ -23,8 +23,7 @@ public class Children extends Parents {
 
     public String getMsg() {
 
-        return super.getName() + " 今年" + super.getAge() + " 岁了 \n" + this.msg + "---->"
-                + super.birthday;
+        return super.getName() + " 今年" + super.getAge() + " 岁了 \n" + this.msg + "---->" + super.birthday;
     }
 
     public static void main(String[] args) {

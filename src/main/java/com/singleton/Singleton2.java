@@ -7,27 +7,28 @@ package com.singleton;
  */
 public class Singleton2 {
 
-	/**
-	 * 私有化构造函数
-	 */
-	private Singleton2() {
+    /**
+     * 私有化构造函数
+     */
+    private Singleton2() {
 
-	}
+    }
 
-	/**
-	 * 内部变量
-	 */
-	private static Singleton2 singleton2;
+    /**
+     * 内部变量
+     */
+    private static Singleton2 singleton2;
 
-	/**
-	 * 对外方法
-	 * @return
-	 */
-	public static synchronized Singleton2 getInstance() {
+    /**
+     * 对外方法
+     * 
+     * @return
+     */
+    public static synchronized Singleton2 getInstance() {
 
-		if (singleton2 == null) {
-			singleton2 = new Singleton2();
-		}
-		return singleton2;
-	}
+        if (singleton2 == null) {
+            singleton2 = new Singleton2();
+        }
+        return singleton2;
+    }
 }

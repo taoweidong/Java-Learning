@@ -65,7 +65,8 @@ public class PalindromePairs {
         /**
          * 检查字符串是否为回文字符串
          *
-         * @param s 待检查的字符串
+         * @param s
+         *            待检查的字符串
          * @return 检查结果 True:是 False:否
          */
         private boolean isCheck(String s) {

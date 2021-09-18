@@ -36,30 +36,31 @@ import java.util.Stack;
  */
 public class HuaWei_Test20210409_01 {
 
-  public static void main(String[] args) {
-    int result = new HuaWei_Test20210409_01().nextGreaterElement(12);
-    System.out.println(result);
-  }
-
-  public int nextGreaterElement(int n) {
-    String numStr = String.valueOf(n);
-    int len = numStr.length();
-
-    // 栈空间
-    Stack<Integer> stack = new Stack<>();
-    int memIdx = -1;
-    long res = -1;
-
-    // 遍历数组，进行单调处理
-    for (int i = len - 1; i >= 0; i--) {
-      while (!stack.isEmpty() && numStr.charAt(stack.peek()) > numStr.charAt(i)) {
-        memIdx = stack.peek();
-        stack.pop();
-      }
-
-      if (memIdx != -1) {}
+    public static void main(String[] args) {
+        int result = new HuaWei_Test20210409_01().nextGreaterElement(12);
+        System.out.println(result);
     }
 
-    return 0;
-  }
+    public int nextGreaterElement(int n) {
+        String numStr = String.valueOf(n);
+        int len = numStr.length();
+
+        // 栈空间
+        Stack<Integer> stack = new Stack<>();
+        int memIdx = -1;
+        long res = -1;
+
+        // 遍历数组，进行单调处理
+        for (int i = len - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && numStr.charAt(stack.peek()) > numStr.charAt(i)) {
+                memIdx = stack.peek();
+                stack.pop();
+            }
+
+            if (memIdx != -1) {
+            }
+        }
+
+        return 0;
+    }
 }

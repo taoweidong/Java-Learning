@@ -2,20 +2,20 @@ package com.banking.exception;
 
 public class OverdraftException extends RuntimeException {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
 
-	//³à×Ö
-	private double deficit;
-	
-	public double getDeficit() {
-		return deficit;
-	}
-	
-	public OverdraftException(String message, double deficit) {
-		super(message);
-		this.deficit = deficit;
-	}
+    // ï¿½ï¿½ï¿½ï¿½
+    private double deficit;
+
+    public double getDeficit() {
+        return deficit;
+    }
+
+    public OverdraftException(String message, double deficit) {
+        super(message);
+        this.deficit = deficit;
+    }
 }

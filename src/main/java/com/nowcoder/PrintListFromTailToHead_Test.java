@@ -23,7 +23,7 @@ public class PrintListFromTailToHead_Test {
         // 打印处理之后的数据，校验结果
         Iterator<Integer> iterator = arrayList.iterator();
         while (iterator.hasNext()) {
-            Integer temp = (Integer) iterator.next();
+            Integer temp = (Integer)iterator.next();
             System.out.println(temp);
 
         }

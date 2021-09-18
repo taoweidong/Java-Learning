@@ -7,7 +7,6 @@ package com.leetcode;
  */
 public class NumPermsDISequence_903 {
 
-
     public int numPermsDISequence(String S) {
 
         return 0;

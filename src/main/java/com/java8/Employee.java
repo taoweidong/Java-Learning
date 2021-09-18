@@ -4,72 +4,72 @@ import com.alibaba.fastjson.JSON;
 
 public class Employee {
 
-	private Integer id;
+    private Integer id;
 
-	private String name;
+    private String name;
 
-	private Integer age;
+    private Integer age;
 
-	private Double salary;
+    private Double salary;
 
-	@Override
-	public String toString() {
+    @Override
+    public String toString() {
 
-		return JSON.toJSONString(this);
-	}
+        return JSON.toJSONString(this);
+    }
 
-	public Employee() {
+    public Employee() {
 
-		super();
-	}
+        super();
+    }
 
-	public Employee(Integer id, String name, Integer age, Double salary) {
+    public Employee(Integer id, String name, Integer age, Double salary) {
 
-		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.salary = salary;
-	}
+        super();
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
 
-	public Integer getId() {
+    public Integer getId() {
 
-		return id;
-	}
+        return id;
+    }
 
-	public void setId(Integer id) {
+    public void setId(Integer id) {
 
-		this.id = id;
-	}
+        this.id = id;
+    }
 
-	public String getName() {
+    public String getName() {
 
-		return name;
-	}
+        return name;
+    }
 
-	public void setName(String name) {
+    public void setName(String name) {
 
-		this.name = name;
-	}
+        this.name = name;
+    }
 
-	public Integer getAge() {
+    public Integer getAge() {
 
-		return age;
-	}
+        return age;
+    }
 
-	public void setAge(Integer age) {
+    public void setAge(Integer age) {
 
-		this.age = age;
-	}
+        this.age = age;
+    }
 
-	public Double getSalary() {
+    public Double getSalary() {
 
-		return salary;
-	}
+        return salary;
+    }
 
-	public void setSalary(Double salary) {
+    public void setSalary(Double salary) {
 
-		this.salary = salary;
-	}
+        this.salary = salary;
+    }
 
 }

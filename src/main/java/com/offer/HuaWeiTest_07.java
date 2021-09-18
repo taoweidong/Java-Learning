@@ -17,7 +17,8 @@ public class HuaWeiTest_07 {
     /**
      * 罗马数字转整数
      *
-     * @param str 罗马数字
+     * @param str
+     *            罗马数字
      * @return 整数
      */
     public static int romanToInt(String str) {
@@ -37,7 +38,7 @@ public class HuaWeiTest_07 {
         map.put("CM", 900);
 
         int count = 0;
-        for (int i = 0; i < str.length(); ) {
+        for (int i = 0; i < str.length();) {
             if (i + 1 < str.length() && map.containsKey(str.substring(i, i + 2))) {
                 count += map.get(str.substring(i, i + 2));
                 i += 2;
@@ -45,7 +46,7 @@ public class HuaWeiTest_07 {
                 count += map.get(str.substring(i, i + 1));
                 i += 1;
             } else {
-                //不合法的字符串
+                // 不合法的字符串
                 return -1;
             }
         }

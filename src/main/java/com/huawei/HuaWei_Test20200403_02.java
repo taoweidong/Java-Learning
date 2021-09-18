@@ -3,14 +3,7 @@ package com.huawei;
 import java.util.*;
 
 /**
- * 字符串过滤:对于输入字符串检查是否存在非法字符，输出合法字符串(去重)和非法字符串(不去重)
- * abc
- * acv
- * sds
- * sada*(*
- * 3409242
- * 789&*(&(
- * abc
+ * 字符串过滤:对于输入字符串检查是否存在非法字符，输出合法字符串(去重)和非法字符串(不去重) abc acv sds sada*(* 3409242 789&*(&( abc
  *
  * @author Taoweidong
  */
@@ -23,7 +16,7 @@ public class HuaWei_Test20200403_02 {
 
             String str = sc.nextLine().trim();
 
-            //进行逻辑判断
+            // 进行逻辑判断
             Set<String> legalStr = new LinkedHashSet<>();
             List<String> noLegalStr = new ArrayList<>();
             while (!"".equals(str)) {
@@ -37,10 +30,9 @@ public class HuaWei_Test20200403_02 {
                 str = sc.nextLine();
             }
 
-            //输出结果
+            // 输出结果
             System.out.println(String.join(" ", legalStr));
             System.out.println(String.join(" ", noLegalStr));
-
 
         }
     }
@@ -48,7 +40,8 @@ public class HuaWei_Test20200403_02 {
     /**
      * 检查给定字符串是否合法
      *
-     * @param str 给定字符串
+     * @param str
+     *            给定字符串
      * @return True:合法 False:不合法
      */
     private static boolean isLegal(String str) {
@@ -70,6 +63,5 @@ public class HuaWei_Test20200403_02 {
 
         return flag;
     }
-
 
 }

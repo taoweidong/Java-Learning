@@ -16,7 +16,6 @@ public class HuaWei_Test_20200406_01 extends Test001 {
     }
 }
 
-
 abstract class Test001 {
 
     private int test() {
@@ -31,7 +30,6 @@ abstract class Test001 {
         System.out.println("Hello World!!");
     }
 
-
     /**
      * 抽象方法:抽象方法必须被子类实现
      *
@@ -39,5 +37,3 @@ abstract class Test001 {
      */
     abstract int test001();
 }
-
-

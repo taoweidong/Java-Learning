@@ -1,6 +1,5 @@
 package com.donghua.entity;
 
-
 import java.math.BigInteger;
 import java.sql.ResultSet;
 import java.sql.SQLException;

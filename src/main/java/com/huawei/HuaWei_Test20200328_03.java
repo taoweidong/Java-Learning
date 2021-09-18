@@ -3,14 +3,8 @@ package com.huawei;
 import java.util.Scanner;
 
 /**
- * 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
- * 注意：
- * num1 和num2 的长度都小于 5100.
- * num1 和num2 都只包含数字 0-9.
- * num1 和num2 都不包含任何前导零。
- * 你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式。
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/add-strings
+ * 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。 注意： num1 和num2 的长度都小于 5100. num1 和num2 都只包含数字 0-9. num1 和num2 都不包含任何前导零。 你不能使用任何內建
+ * BigInteger 库， 也不能直接将输入的字符串转换为整数形式。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/add-strings
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  *
  * @author Taoweidong
@@ -21,39 +15,39 @@ public class HuaWei_Test20200328_03 {
 
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
-            //输入参数
+            // 输入参数
             String num1 = sc.nextLine();
             String num2 = sc.nextLine();
 
-            //结果
+            // 结果
             StringBuilder output = new StringBuilder();
 
-            //计算的长度
+            // 计算的长度
             int num1Length = num1.length() - 1;
             int num2Length = num2.length() - 1;
 
-            //进位标志，如果进位只能是1
+            // 进位标志，如果进位只能是1
             int temp = 0;
 
             while (num1Length >= 0 || num2Length >= 0) {
 
-                //注意检查错位的情况
+                // 注意检查错位的情况
                 int left = num1Length >= 0 ? num1.charAt(num1Length) - '0' : 0;
                 int right = num2Length >= 0 ? num2.charAt(num2Length) - '0' : 0;
 
-                //开始计算，当前位的结果
+                // 开始计算，当前位的结果
                 int count = left + right + temp;
 
-                //是否需要进位
+                // 是否需要进位
                 temp = count >= 10 ? 1 : 0;
 
-                //当前位的结果
+                // 当前位的结果
                 int curr = count >= 10 ? count - 10 : count;
 
-                //添加结果：注意此处的位置是反的，输出时需要反序
+                // 添加结果：注意此处的位置是反的，输出时需要反序
                 output.append(curr);
 
-                //调整位置
+                // 调整位置
                 num1Length--;
                 num2Length--;
             }
@@ -63,7 +57,6 @@ public class HuaWei_Test20200328_03 {
             }
 
             System.out.println(output.reverse().toString());
-
 
         }
     }

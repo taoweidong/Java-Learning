@@ -5,55 +5,59 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ´ú±íÒøÐÐ¶ÔÏó
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½
+ * 
  * @author Think Pad
  *
  */
 public class Bank {
-	
-	//µ±Ç° Bank ÖÐÓÐ¶à¸ö Cutomer
-	private List<Customer> customers; 
-	
-	private Bank() {
-		customers = new ArrayList<Customer>();
-	}
-	
-	private static Bank instance = new Bank();
-	
-	public static Bank getBank(){
-		return instance;
-	}
-	
-	/**
-	 * ¸ù¾Ý´«ÈëµÄ²ÎÊý´´½¨Ò»¸öÐÂµÄ Cusotmer ¶ÔÏó, ²¢°Ñ¸Ã¶ÔÏó¸³¸ø customers ÖÐÖ¸¶¨µÄÔªËØ
-	 * @param firstName
-	 * @param lastName
-	 */
-	public void addCustomer(String firstName, String lastName){
-		//1.¸ù¾Ý´«ÈëµÄ²ÎÊý´´½¨Ò»¸öÐÂµÄ Cusotmer ¶ÔÏó
-		Customer cust = new Customer(firstName, lastName);
-		
-		customers.add(cust);
-	}
-	
-	/**
-	 * ·µ»Ø ±íÊ¾ customers ±äÁ¿ÖÐÓÐ¶àÉÙ¸öÕæÕýµÄ Customer ¶ÔÏóµÄÕûÊý 
-	 * @return
-	 */
-	public int getNumOfCustomers(){
-		return customers.size();
-	}
-	
-	/**
-	 * ·µ»ØÖ¸¶¨Ë÷Òý¶ÔÓ¦µÄ Customer ¶ÔÏó
-	 * @param index
-	 * @return
-	 */
-	public Customer getCustomer(int index){
-		return customers.get(index);
-	}
-	
-	public Iterator<Customer> getCustomers(){
-		return customers.iterator();
-	}
+
+    // ï¿½ï¿½Ç° Bank ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ Cutomer
+    private List<Customer> customers;
+
+    private Bank() {
+        customers = new ArrayList<Customer>();
+    }
+
+    private static Bank instance = new Bank();
+
+    public static Bank getBank() {
+        return instance;
+    }
+
+    /**
+     * ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ Cusotmer ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ñ¸Ã¶ï¿½ï¿½ó¸³¸ï¿½ customers ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
+     * 
+     * @param firstName
+     * @param lastName
+     */
+    public void addCustomer(String firstName, String lastName) {
+        // 1.ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ Cusotmer ï¿½ï¿½ï¿½ï¿½
+        Customer cust = new Customer(firstName, lastName);
+
+        customers.add(cust);
+    }
+
+    /**
+     * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê¾ customers ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Customer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * 
+     * @return
+     */
+    public int getNumOfCustomers() {
+        return customers.size();
+    }
+
+    /**
+     * ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ Customer ï¿½ï¿½ï¿½ï¿½
+     * 
+     * @param index
+     * @return
+     */
+    public Customer getCustomer(int index) {
+        return customers.get(index);
+    }
+
+    public Iterator<Customer> getCustomers() {
+        return customers.iterator();
+    }
 }
