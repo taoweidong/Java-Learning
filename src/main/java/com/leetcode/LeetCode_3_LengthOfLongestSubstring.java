@@ -3,6 +3,9 @@ package com.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 3. 无重复字符的最长子串
+ */
 public class LeetCode_3_LengthOfLongestSubstring {
     public static void main(String[] args) {
 
@@ -14,7 +17,7 @@ public class LeetCode_3_LengthOfLongestSubstring {
     }
 
     public int lengthOfLongestSubstring(String s) {
-
+        // 异常处理
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -22,6 +25,7 @@ public class LeetCode_3_LengthOfLongestSubstring {
         int left = 0;
         int right = 0;
 
+        // 收集结果
         int result = 0;
 
         // 定义窗口
